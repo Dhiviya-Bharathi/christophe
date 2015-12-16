@@ -10,8 +10,8 @@
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package WordPress
- * @subpackage christophe
- * @since christophe theme 1.0
+ * @subpackage Christophe Buecher
+ * @since Christophe Buecher theme 1.0
  */
 
 get_header();
