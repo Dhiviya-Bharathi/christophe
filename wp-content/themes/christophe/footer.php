@@ -1,1 +1,9 @@
-<p>footer part for </p>
+</div><!-- .site-content -->
+
+	<footer id="colophon" class="site-footer" role="contentinfo">
+	</footer>
+
+<?php wp_footer(); ?>
+
+</body>
+</html>

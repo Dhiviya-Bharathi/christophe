@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: About Pages
+ * Template Name: News Pages
  *
  * @package WordPress
  * @subpackage Christophe Buecher

@@ -15,5 +15,10 @@
  */
 
 get_header();
-get_template_part( 'content', 'none' );
+?>
+html goes here,,,,,,,,,,,,,,,,,,,,,,divi
+
+For home page use index.php itself
+
+<?php
 get_footer();
