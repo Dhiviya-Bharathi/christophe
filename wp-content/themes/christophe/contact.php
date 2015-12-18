@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: About Pages
+ * Template Name: Contact Pages
  *
  * @package WordPress
  * @subpackage Christophe Buecher
@@ -8,4 +8,4 @@
  */
 
 get_header();
-get_footer();
+get_footer();s

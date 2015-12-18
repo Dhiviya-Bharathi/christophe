@@ -10,10 +10,15 @@
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package WordPress
- * @subpackage christophe
- * @since christophe theme 1.0
+ * @subpackage Christophe Buecher
+ * @since Christophe Buecher theme 1.0
  */
 
 get_header();
-get_template_part( 'content', 'none' );
+?>
+html goes here,,,,,,,,,,,,,,,,,,,,,,divi
+
+For home page use index.php itself
+
+<?php
 get_footer();

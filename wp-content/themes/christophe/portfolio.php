@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: About Pages
+ * Template Name: Port-Folio Pages
  *
  * @package WordPress
  * @subpackage Christophe Buecher
