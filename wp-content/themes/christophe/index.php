@@ -16,9 +16,11 @@
 
 get_header();
 ?>
-html goes here,,,,,,,,,,,,,,,,,,,,,,divi
+<section class="container vcenter">
+	<div class="main-wrapper">
+		<h1 class="main-name">CHRISTOPHE BUECHER</h1>
+		<p class="main-designation">MANUFACTURING DIRECTOR</p>
+		<button class="main-button">Learn more about him</button>
+	</div>
+</section>
 
-For home page use index.php itself
-
-<?php
-get_footer();
