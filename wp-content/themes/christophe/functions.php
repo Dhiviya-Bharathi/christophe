@@ -25,3 +25,5 @@ function Home_Page_Settings(){
 function EXP_Page_Settings(){
 	include_once 'admin/exp_page_settingpage.php';
 }
+
+add_theme_support( 'post-thumbnails' );
