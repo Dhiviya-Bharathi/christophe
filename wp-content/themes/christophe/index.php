@@ -11,6 +11,8 @@
 <script>
 $(document).ready(function(){
 	$('.menu').css("position","fixed");
+	$('html, body').css("height","100%");
+	
 	$(".menu-icon").click(function () {
 		// Set the effect type
 		var effect = 'slide';
