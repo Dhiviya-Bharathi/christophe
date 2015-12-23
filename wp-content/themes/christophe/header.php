@@ -19,6 +19,7 @@ $(document).ready(function(){
 	$('.about-section, .experience-section, .news-section').css({
 		"min-height": sectionHeight
 	});
+	$('html, body').css("height","auto");
 	$(".menu-icon").click(function () {
 		// Set the effect type
 		var effect = 'slide';
@@ -45,25 +46,37 @@ $(document).ready(function(){
 </header>
 <nav id="menu" class="menu">
 	<ul class="menu-list">
-		<li class="menu-item">
-			<span class="menu-item-title">HOME</span>
-			<img src="../wp-content/themes/christophe/images/home.png"></img>			
-		</li>
-		<li class="menu-item about">
-			<img src="../wp-content/themes/christophe/images/portfolio.png"></img>
-		</li>
-		<li class="menu-item experience">
-			<img src="../wp-content/themes/christophe/images/newspaper.png"></img>
-		</li>
-		<li class="menu-item portfolio">
-			<img src="../wp-content/themes/christophe/images/briefcase.png"></img>
-		</li>
-		<li class="menu-item news">
-			<img src="../wp-content/themes/christophe/images/graph.png"></img>
-		</li>
-		<li class="menu-item contact">
-			<img src="../wp-content/themes/christophe/images/envelope.png"></img>
-		</li>
+		<a href="/christophe">
+			<li class="menu-item">
+				<!--<span class="menu-item-title">HOME</span>-->			
+				<img src="../wp-content/themes/christophe/images/home.png"></img>					
+			</li>
+		</a>	
+		<a href="about">
+			<li class="menu-item about">			
+				<img src="../wp-content/themes/christophe/images/portfolio.png"></img>			
+			</li>
+		</a>
+		<a href="experience">
+			<li class="menu-item experience">			
+				<img src="../wp-content/themes/christophe/images/newspaper.png"></img>			
+			</li>
+		</a>
+		<a href="portfolio">
+			<li class="menu-item portfolio">			
+				<img src="../wp-content/themes/christophe/images/briefcase.png"></img>			
+			</li>
+		</a>
+		<a href="news">
+			<li class="menu-item news">			
+				<img src="../wp-content/themes/christophe/images/graph.png"></img>			
+			</li>
+		</a>
+		<a href="contact">
+			<li class="menu-item contact">			
+				<img src="../wp-content/themes/christophe/images/envelope.png"></img>
+			</li>
+		</a>
 	</ul>
 </nav>
 </script>
