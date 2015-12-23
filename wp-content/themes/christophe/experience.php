@@ -45,6 +45,104 @@ get_header();
 				</div>
 			</div>
 		</div>
+				<div class="row col-lg-12">
+			<div class="exp-date-wrap col-lg-6">
+				<div class="exp-date col-lg-6 col-lg-offset-4">
+					January 1989 - June 1997
+				</div>
+			</div>
+			<span class="milestone"></span>
+			<div class="exp-role-wrap col-lg-6">
+				<div class="exp-role col-lg-8 col-lg-offset-2">
+					<h5>Technicien Automatismes</h5>
+					<p>PSA Peugeot Citreon, Mulhouse, Fulge</p>
+				</div>
+			</div>
+		</div>
+				<div class="row col-lg-12">
+			<div class="exp-date-wrap col-lg-6">
+				<div class="exp-date col-lg-6 col-lg-offset-4">
+					January 1989 - June 1997
+				</div>
+			</div>
+			<span class="milestone"></span>
+			<div class="exp-role-wrap col-lg-6">
+				<div class="exp-role col-lg-8 col-lg-offset-2">
+					<h5>Technicien Automatismes</h5>
+					<p>PSA Peugeot Citreon, Mulhouse, Fulge</p>
+				</div>
+			</div>
+		</div>
+				<div class="row col-lg-12">
+			<div class="exp-date-wrap col-lg-6">
+				<div class="exp-date col-lg-6 col-lg-offset-4">
+					January 1989 - June 1997
+				</div>
+			</div>
+			<span class="milestone"></span>
+			<div class="exp-role-wrap col-lg-6">
+				<div class="exp-role col-lg-8 col-lg-offset-2">
+					<h5>Technicien Automatismes</h5>
+					<p>PSA Peugeot Citreon, Mulhouse, Fulge</p>
+				</div>
+			</div>
+		</div>
+				<div class="row col-lg-12">
+			<div class="exp-date-wrap col-lg-6">
+				<div class="exp-date col-lg-6 col-lg-offset-4">
+					January 1989 - June 1997
+				</div>
+			</div>
+			<span class="milestone"></span>
+			<div class="exp-role-wrap col-lg-6">
+				<div class="exp-role col-lg-8 col-lg-offset-2">
+					<h5>Technicien Automatismes</h5>
+					<p>PSA Peugeot Citreon, Mulhouse, Fulge</p>
+				</div>
+			</div>
+		</div>
+				<div class="row col-lg-12">
+			<div class="exp-date-wrap col-lg-6">
+				<div class="exp-date col-lg-6 col-lg-offset-4">
+					January 1989 - June 1997
+				</div>
+			</div>
+			<span class="milestone"></span>
+			<div class="exp-role-wrap col-lg-6">
+				<div class="exp-role col-lg-8 col-lg-offset-2">
+					<h5>Technicien Automatismes</h5>
+					<p>PSA Peugeot Citreon, Mulhouse, Fulge</p>
+				</div>
+			</div>
+		</div>
+				<div class="row col-lg-12">
+			<div class="exp-date-wrap col-lg-6">
+				<div class="exp-date col-lg-6 col-lg-offset-4">
+					January 1989 - June 1997
+				</div>
+			</div>
+			<span class="milestone"></span>
+			<div class="exp-role-wrap col-lg-6">
+				<div class="exp-role col-lg-8 col-lg-offset-2">
+					<h5>Technicien Automatismes</h5>
+					<p>PSA Peugeot Citreon, Mulhouse, Fulge</p>
+				</div>
+			</div>
+		</div>
+				<div class="row col-lg-12">
+			<div class="exp-date-wrap col-lg-6">
+				<div class="exp-date col-lg-6 col-lg-offset-4">
+					January 1989 - June 1997
+				</div>
+			</div>
+			<span class="milestone"></span>
+			<div class="exp-role-wrap col-lg-6">
+				<div class="exp-role col-lg-8 col-lg-offset-2">
+					<h5>Technicien Automatismes</h5>
+					<p>PSA Peugeot Citreon, Mulhouse, Fulge</p>
+				</div>
+			</div>
+		</div>
 		<div class="row col-lg-12">
 			<div class="exp-tail col-lg-6">				
 			</div>

@@ -7,8 +7,18 @@
 <link rel="stylesheet" href="../wp-content/themes/christophe/style.css"/>
 <script src="../wp-content/themes/christophe/js/jquery-1.11.3.min.js"></script>
 <script src="../wp-content/themes/christophe/js/jquery-ui.min.js"></script>
+<script src="../wp-content/themes/christophe/js/bootstrap.min.js"></script>
 <script>
 $(document).ready(function(){
+	var sectionHeight = $(window).height() - 115;
+	console.log(sectionHeight);
+	$('.menu').css({
+		"position":"relative",
+		"min-height": sectionHeight
+	});
+	$('.about-section, .experience-section, .news-section').css({
+		"min-height": sectionHeight
+	});
 	$(".menu-icon").click(function () {
 		// Set the effect type
 		var effect = 'slide';
@@ -45,13 +55,13 @@ $(document).ready(function(){
 		<li class="menu-item experience">
 			<img src="../wp-content/themes/christophe/images/newspaper.png"></img>
 		</li>
-		<li class="menu-item">
+		<li class="menu-item portfolio">
 			<img src="../wp-content/themes/christophe/images/briefcase.png"></img>
 		</li>
-		<li class="menu-item">
+		<li class="menu-item news">
 			<img src="../wp-content/themes/christophe/images/graph.png"></img>
 		</li>
-		<li class="menu-item">
+		<li class="menu-item contact">
 			<img src="../wp-content/themes/christophe/images/envelope.png"></img>
 		</li>
 	</ul>

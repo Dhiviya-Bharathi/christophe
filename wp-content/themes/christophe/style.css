@@ -20,7 +20,7 @@
 
 html, body {
 	width: 100%;
-	height: 100%;
+	height: auto;
 	margin: 0 !important;
 	padding: 0;
 }
@@ -46,7 +46,7 @@ h6 {
 	margin-top: 2px;
 }
 .menu {
-	height: 100%;
+	height: auto;
     width: 65px;
     float: right;
     display: none;
@@ -116,7 +116,7 @@ section.vcenter {
 
 /*******************About********************/
 
-.about-section, .experience-section, .news-section {
+.about-section, .experience-section, .news-section, .contact-section {
 	background-color: #F3F1F2;
 	font-family: roboto-light;
 	height: auto;
@@ -221,6 +221,7 @@ section.vcenter {
 	height: 65px;
 	margin-left: 1px;
 	border-right: 2px solid black;
+	margin-bottom: 65px;
 }
 .news-article-title {
 	font-family: roboto-bold;
@@ -245,4 +246,60 @@ section.vcenter {
 }
 .news-article-text {
 	text-align: justify;
+}
+
+/***************************Contact********************/
+
+.contact-article {
+	background-color: white;
+    margin-bottom: 30px;
+	margin-left: 0;
+	margin-right: 0;
+	padding: 20px;
+}
+.contact-article h5{
+	font-size: 20px;
+	font-family: Roboto-Medium;
+}
+.contact-article form {
+	margin-top: 20px;
+}
+.form-left {
+	padding-left: 0;
+	padding-right: 0;
+}
+.form-control {
+	box-shadow: none;
+	border-radius: 0;
+}
+input.form-control {
+	border-left: 4px solid #CCCCCC;
+	height: 38px;
+}
+textarea.form-control {
+	resize: none;
+}
+.contact-article form button, .contact-article form button:hover {
+	border-radius: 0;
+	background-color: #000000;
+	color: white;
+	padding-left: 40px;
+	padding-right: 40px;
+}
+.contact-article .form-group {
+	margin-bottom: 30px;
+}
+.form-right {
+	padding-left: 0;
+}
+.form-middle {
+	padding-right: 0;
+}
+.form-middle img{
+	float: right;
+}
+input.form-control:active, input.form-control:focus, textarea.form-control:active, textarea.form-control:focus {
+	border: 1px solid #cccccc;
+	border-left: 4px solid #CCCCCC;
+	box-shadow: none;
 }
