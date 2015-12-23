@@ -19,6 +19,7 @@ $(document).ready(function(){
 	$('.about-section, .experience-section, .news-section').css({
 		"min-height": sectionHeight
 	});
+	$('html, body').css("height","auto");
 	$(".menu-icon").click(function () {
 		// Set the effect type
 		var effect = 'slide';
