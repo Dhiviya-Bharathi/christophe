@@ -31,7 +31,9 @@ $(document).ready(function(){
 </html>
 <body>
 <header>
-	<h3>CHRISTOPHE BUECHER</h3>
+	<a href="<?php echo site_url(); ?>"	>
+		<h3>CHRISTOPHE BUECHER</h3>
+	</a>
 	<span class="menu-icon">
 		<img class="open-icon" src="wp-content/themes/christophe/images/open.png"></img>
 		<img class="close-icon hide-icon" src="wp-content/themes/christophe/images/close.png"></img>
@@ -39,36 +41,36 @@ $(document).ready(function(){
 </header>
 <nav id="menu" class="menu">
 	<ul class="menu-list">
-		<a href="">
-			<li class="menu-item">
-				<img src="wp-content/themes/christophe/images/home.png"></img>				
-			</li>
-		</a>
-		<a href="about">
-			<li class="menu-item about">			
-				<img src="wp-content/themes/christophe/images/portfolio.png"></img>			
-			</li>
-		</a>
-		<a href="experience">
-			<li class="menu-item experience">			
-				<img src="wp-content/themes/christophe/images/newspaper.png"></img>			
-			</li>
-		</a>
-		<a href="portfolio">
-			<li class="menu-item">
-				<img src="wp-content/themes/christophe/images/briefcase.png"></img>			
-			</li>
-		</a>
-		<a href="news">
-			<li class="menu-item">
-				<img src="wp-content/themes/christophe/images/graph.png"></img>			
-			</li>
-		</a>
-		<a href="contact">
-			<li class="menu-item">
-				<img src="wp-content/themes/christophe/images/envelope.png"></img>			
-			</li>
-		</a>
+		<li class="menu-item">
+			<a href="<?php echo site_url(); ?>"	>		
+				<img src="wp-content/themes/christophe/images/home.png"></img>
+			</a>		
+		</li>
+		<li class="menu-item about">
+			<a href="<?php echo site_url(); ?>/about"	>		
+				<img src="wp-content/themes/christophe/images/portfolio.png"></img>
+			</a>
+		</li>
+		<li class="menu-item experience">
+			<a href="<?php echo site_url(); ?>/news"	>		
+				<img src="wp-content/themes/christophe/images/newspaper.png"></img>
+			</a>
+		</li>
+		<li class="menu-item portfolio">
+			<a href="<?php echo site_url(); ?>/exp"	>		
+				<img src="wp-content/themes/christophe/images/briefcase.png"></img>
+			</a>
+		</li>
+		<li class="menu-item news">
+			<a href="<?php echo site_url(); ?>/portfolio"	>		
+				<img src="wp-content/themes/christophe/images/graph.png"></img>
+			</a>
+		</li>
+		<li class="menu-item contact">
+			<a href="<?php echo site_url(); ?>/contact"	>		
+			 	<img src="wp-content/themes/christophe/images/envelope.png"></img>
+			</a>
+		</li>
 	</ul>
 </nav>
 </script>
@@ -76,7 +78,9 @@ $(document).ready(function(){
 	<div class="main-wrapper">
 		<h1 class="main-name">CHRISTOPHE BUECHER</h1>
 		<p class="main-designation">MANUFACTURING DIRECTOR</p>
-		<button class="main-button">Learn more about him</button>
+		<a href="<?php echo site_url(); ?>/about">
+			<button class="main-button">Learn more about him</button>
+		</a>
 	</div>
 </section>
 
