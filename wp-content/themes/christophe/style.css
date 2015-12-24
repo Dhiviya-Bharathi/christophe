@@ -81,8 +81,7 @@ section.vcenter {
 	height: 90%; 
     width:100%;
     display:flex;
-    align-items: center;
-	background-image: url('http://localhost/christophe/wp-content/themes/christophe/images/home_image.png');
+    align-items: center;	
 	background-color: #2B2B2B;
 	background-repeat: no-repeat;
 	background-position: right center;

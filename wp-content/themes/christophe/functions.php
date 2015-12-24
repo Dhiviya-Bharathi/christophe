@@ -19,6 +19,30 @@ function exp_Menu() {
 
 
 function Home_Page_Settings(){
+	global $_FILES,$wpdb;
+
+	if($_POST['home_name'])
+	update_option('home_name',$_POST['home_name']);
+	if($_POST['home_title'])
+	update_option('home_title',$_POST['home_title']);
+	if($_POST['home_btn'])
+	update_option('home_btn',$_POST['home_btn']);	
+
+	if($_FILES['home_bg']['name']){
+		$destinationPath = str_replace('/', '\\', plugin_dir_path(__FILE__));
+		$destinationPath = $destinationPath.'images\\';
+		$old = $destinationPath.get_option('home_bg');
+		if(file_exists($old)){
+			unlink($old);
+		}
+		$ext = explode('.', $_FILES['home_bg']['name']);
+		$modifiiedfilename = 'home_image.'.$ext['1'];
+		$destinationPath= $destinationPath.$modifiiedfilename;
+
+		if (move_uploaded_file($_FILES["home_bg"]["tmp_name"], $destinationPath)) {	
+			update_option('home_bg',$modifiiedfilename);
+		}
+	}
 	include_once 'admin/home_page_settingpage.php';
 }
 
