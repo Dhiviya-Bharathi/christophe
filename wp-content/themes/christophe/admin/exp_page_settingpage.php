@@ -31,8 +31,34 @@
 	</form>
 </div>
 
-
-
-
-
-
+<table border="1">
+	<thead>
+		<th>
+			Experience From
+		</th>
+		<th>
+			Experience TO
+		</th>
+		<th>
+			Experience Title
+		</th>
+		<th>
+			Experience Desc
+		</th>
+		<th>
+			Action
+		</th>		
+	</thead>
+	<tbody>
+		<tr>
+			<td>jhrfd</td>
+			<td>zdrh65rh</td>
+			<td>jhrfd</td>
+			<td>zdrh65rh</td>
+			<td>
+				<span><a href="../?id=1">Edit</a></span><br/>
+				<span><a href="../?id=1">Del</a></span>
+			</td>
+		</tr>
+	</tbody>
+</table>

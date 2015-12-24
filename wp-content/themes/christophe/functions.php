@@ -47,6 +47,10 @@ function Home_Page_Settings(){
 }
 
 function EXP_Page_Settings(){
+	echo $_GET['id'];
+	echo $_GET['edit'];
+	echo $_GET['del'];
+	print_r($_POST);
 	include_once 'admin/exp_page_settingpage.php';
 }
 
