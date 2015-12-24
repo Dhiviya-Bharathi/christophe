@@ -7,6 +7,9 @@
  * @since Christophe Buecher 1.0
  */
 $abt_img = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+if(!$abt_img){
+	$abt_img = '../wp-content/themes/christophe/images/christ-about.png';
+}
 get_header();?>
 <section class="about-section">
 	<article class="container">
