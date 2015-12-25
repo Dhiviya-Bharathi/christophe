@@ -51,6 +51,6 @@ $('.open-icon').addClass('hide-icon');
 $('.close-icon').removeClass('hide-icon');
 $('#menu').show();
 $('#menu .contact img').attr("src","../wp-content/themes/christophe/images/contact_dark.png");
-$('#menu .contact').addClass('active');
+$('#menu .contact .menu-item').addClass('active');
 </script>
 <?php get_footer(); ?>

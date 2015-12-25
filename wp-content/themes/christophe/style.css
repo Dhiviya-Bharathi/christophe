@@ -196,7 +196,9 @@ section.vcenter {
 .menu-item.active {
 	background-color: white;
 }
-
+.about-content {
+	text-align: justify;
+}
 /******************Experience******************/
 
 .exp-head {

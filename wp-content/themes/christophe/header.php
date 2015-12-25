@@ -32,9 +32,9 @@ $(document).ready(function(){
 		$('.menu-icon img').toggleClass('hide-icon');
 		$('#menu').toggle(effect, options, duration);
 	});
-	$('.menu-item').hover(function(){
+	/*$('.menu-item').hover(function(){
 		$(this).siblings(".menu-hover-item").show();
-	});
+	});*/
 	
 });
 </script>
@@ -50,35 +50,64 @@ $(document).ready(function(){
 </header>
 <nav id="menu" class="menu">
 	<ul class="menu-list">
-		<a href="/christophe">
-			<li class="menu-item">
-				<!--<span class="menu-item-title">HOME</span>-->			
-				<img src="../wp-content/themes/christophe/images/home.png"></img>					
-			</li>
-		</a>	
-		<a href="about">
-			<li class="menu-item about">			
-				<img src="../wp-content/themes/christophe/images/portfolio.png"></img>			
-			</li>
-		</a>
-		<a href="experience">
-			<li class="menu-item experience">			
-				<img src="../wp-content/themes/christophe/images/newspaper.png"></img>			
+		<a href="/christophe" class="menu-anchor">
+			<li>		
+				<div class="menu-item">
+					<img src="../wp-content/themes/christophe/images/home.png">				
+				</div>
+				<div class="menu-hover-item">
+					Home
+				</div>
 			</li>
 		</a>
-		<a href="portfolio">
-			<li class="menu-item portfolio">			
-				<img src="../wp-content/themes/christophe/images/briefcase.png"></img>			
+		<a href="about"  class="menu-anchor">
+			<li class="about">		
+				<div class="menu-item">
+					<img src="../wp-content/themes/christophe/images/portfolio.png"></img>			
+				</div>
+				<div class="menu-hover-item">
+					About
+				</div>
 			</li>
 		</a>
-		<a href="news">
-			<li class="menu-item news">			
-				<img src="../wp-content/themes/christophe/images/graph.png"></img>			
+		<a href="experience"  class="menu-anchor">
+			<li class="experience">		
+				<div class="menu-item">
+					<img src="../wp-content/themes/christophe/images/newspaper.png"></img>	
+				</div>
+				<div class="menu-hover-item">
+					Experience
+				</div>					
 			</li>
 		</a>
-		<a href="contact">
-			<li class="menu-item contact">			
-				<img src="../wp-content/themes/christophe/images/envelope.png"></img>
+		<a href="portfolio"  class="menu-anchor">
+			<li class="portfolio">
+				<div class="menu-item">
+					<img src="../wp-content/themes/christophe/images/briefcase.png"></img>	
+				</div>
+				<div class="menu-hover-item">
+					Portfolio
+				</div>
+			</li>
+		</a>
+		<a href="news"  class="menu-anchor">
+			<li class="news">
+				<div class="menu-item">
+					<img src="../wp-content/themes/christophe/images/graph.png"></img>		
+				</div>
+				<div class="menu-hover-item">
+					News
+				</div>
+			</li>
+		</a>
+		<a href="contact"  class="menu-anchor">
+			<li class="contact">
+				<div class="menu-item">
+					<img src="../wp-content/themes/christophe/images/envelope.png"></img>		
+				</div>
+				<div class="menu-hover-item">
+					Contact
+				</div>
 			</li>
 		</a>
 	</ul>

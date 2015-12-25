@@ -85,6 +85,6 @@ $('.open-icon').addClass('hide-icon');
 $('.close-icon').removeClass('hide-icon');
 $('#menu').show();
 $('#menu .news img').attr("src","../wp-content/themes/christophe/images/news-dark.png");
-$('#menu .news').addClass('active');
+$('#menu .news .menu-item').addClass('active');
 </script>
 <?php get_footer(); ?>

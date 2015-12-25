@@ -27,7 +27,7 @@ $('.open-icon').addClass('hide-icon');
 $('.close-icon').removeClass('hide-icon');
 $('#menu').show();
 $('#menu .about img').attr("src","../wp-content/themes/christophe/images/Portfolio_dark.png");
-$('#menu .about').addClass('active');
+$('#menu .about .menu-item').addClass('active');
 </script>
 <?php get_footer();
 ?>
