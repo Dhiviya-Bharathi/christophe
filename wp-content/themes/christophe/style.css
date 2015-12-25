@@ -33,6 +33,9 @@ header {
     width: 100%;
     z-index: 999;
 }
+header a h3{
+	color: #333333;
+}
 header h3 {
 	margin: 0;
     padding: 0;

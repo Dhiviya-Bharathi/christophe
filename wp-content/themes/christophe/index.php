@@ -32,7 +32,9 @@ $(document).ready(function(){
 </html>
 <body>
 <header>
-	<h3>CHRISTOPHE BUECHER</h3>
+	<a href="<?php echo site_url(); ?>"	>
+		<h3>CHRISTOPHE BUECHER</h3>
+	</a>
 	<span class="menu-icon">
 		<img class="open-icon" src="wp-content/themes/christophe/images/open.png"></img>
 		<img class="close-icon hide-icon" src="wp-content/themes/christophe/images/close.png"></img>
@@ -40,7 +42,7 @@ $(document).ready(function(){
 </header>
 <nav id="menu" class="menu">
 	<ul class="menu-list">
-		<a href="/christophe" class="menu-anchor">
+		<a href="<?php echo site_url(); ?>" class="menu-anchor">
 			<li>		
 				<div class="menu-item">
 					<img src="wp-content/themes/christophe/images/home.png">				
@@ -50,7 +52,7 @@ $(document).ready(function(){
 				</div>
 			</li>
 		</a>
-		<a href="about"  class="menu-anchor">
+		<a href="<?php echo site_url(); ?>/about"  class="menu-anchor">
 			<li class="about">		
 				<div class="menu-item">
 					<img src="wp-content/themes/christophe/images/portfolio.png"></img>			
@@ -60,7 +62,7 @@ $(document).ready(function(){
 				</div>
 			</li>
 		</a>
-		<a href="experience"  class="menu-anchor">
+		<a href="<?php echo site_url(); ?>/exp"  class="menu-anchor">
 			<li class="experience">		
 				<div class="menu-item">
 					<img src="wp-content/themes/christophe/images/newspaper.png"></img>	
@@ -70,7 +72,7 @@ $(document).ready(function(){
 				</div>					
 			</li>
 		</a>
-		<a href="portfolio"  class="menu-anchor">
+		<a href="<?php echo site_url(); ?>/portfolio"  class="menu-anchor">
 			<li class="portfolio">
 				<div class="menu-item">
 					<img src="wp-content/themes/christophe/images/briefcase.png"></img>	
@@ -91,7 +93,7 @@ $(document).ready(function(){
 			</li>
 		</a>
 		<a href="contact"  class="menu-anchor">
-			<li class="contact">
+			<li class="<?php echo site_url(); ?>/contact">
 				<div class="menu-item">
 					<img src="wp-content/themes/christophe/images/envelope.png"></img>		
 				</div>
@@ -103,11 +105,14 @@ $(document).ready(function(){
 	</ul>
 </nav>
 </script>
-<section class="container vcenter">
+
+<section class="container vcenter" style="background-image: url('wp-content/themes/christophe/images/<?php echo get_option("home_bg"); ?>');">
 	<div class="main-wrapper">
-		<h1 class="main-name">CHRISTOPHE BUECHER</h1>
-		<p class="main-designation">MANUFACTURING DIRECTOR</p>
-		<button class="main-button">Learn more about him</button>
+		<h1 class="main-name"><?php echo get_option('home_name'); ?></h1>
+		<p class="main-designation"><?php echo get_option('home_title'); ?></p>
+		<a href="<?php echo site_url(); ?>/about">
+			<button class="main-button"><?php echo get_option('home_btn'); ?></button>
+		</a>
 	</div>
 </section>
 

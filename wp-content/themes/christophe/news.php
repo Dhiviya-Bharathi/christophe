@@ -6,77 +6,45 @@
  * @subpackage Christophe Buecher
  * @since Christophe Buecher 1.0
  */
-
+$args = array(	
+	'orderby'          => 'date',
+	'category_name'    => 'news',
+	'order'            => 'DESC',		
+	'post_status'      => 'publish',
+	'suppress_filters' => true 
+);
+$posts_array = get_posts( $args ); 
+// echo "<pre>";
+// print_r($posts_array);
+// echo "</pre>";
 get_header(); ?>
 <section class="news-section">	
 	<div class="container">
 		<h6>News</h6>		
 		<article class="row">
+			<?php foreach ($posts_array as $key => $value) { ?>
 			<div class="col-lg-4 new-article">
-				<img class="news-article-img" src="../wp-content/themes/christophe/images/news-img.png"></img>
-				<h3 class="news-article-title">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h3>
-				<p class="news-article-text">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-				<button class="news-read-more" data-toggle="modal" data-target="#myModal">Read more</button>
+				<?php $post_img = wp_get_attachment_url( get_post_thumbnail_id($value->ID) ); ?>
+				<div class="col-md-12 no-padd"><center><img style="max-width:100%;" class="news-article-img" src="<?php echo $post_img; ?>"></img></center></div>
+				<h3 class="news-article-title"><?php echo $value->post_title; ?></h3>
+				<p class="news-article-text"><?php echo $value->post_content; ?></p>
+				<button class="news-read-more" data-toggle="modal" data-target="#myModal_<?php echo $value->ID; ?>">Read more</button>
 			</div>
-			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal fade" id="myModal_<?php echo $value->ID; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 			  <div class="modal-dialog" role="document">
 				<div class="modal-content">
 				  <div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+					<h4 class="modal-title" id="myModalLabel"><?php echo $value->post_title; ?></h4>
 				  </div>
 				  <div class="modal-body">
-						Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-
-						Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
-
-						Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
-
-						Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-
-						Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
-
-						Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
-
-						Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-
-						Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
-
-						Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+				  	<img class="news-article-img" src="<?php echo $post_img; ?>"></img>
+				  	<p><?php echo $value->post_content; ?></p>
 				  </div>
 				</div>
 			  </div>
 			</div>
-			<div class="col-lg-4 new-article">
-				<img class="news-article-img" src="../wp-content/themes/christophe/images/news-img.png"></img>
-				<h3 class="news-article-title">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h3>
-				<p class="news-article-text">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-				<button class="news-read-more">Read more</button>
-			</div>
-			<div class="col-lg-4 new-article">
-				<img class="news-article-img" src="../wp-content/themes/christophe/images/news-img.png"></img>
-				<h3 class="news-article-title">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h3>
-				<p class="news-article-text">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-				<button class="news-read-more">Read more</button>
-			</div>
-			<div class="col-lg-4 new-article">
-				<img class="news-article-img" src="../wp-content/themes/christophe/images/news-img.png"></img>
-				<h3 class="news-article-title">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h3>
-				<p class="news-article-text">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-				<button class="news-read-more">Read more</button>
-			</div>
-			<div class="col-lg-4 new-article">
-				<img class="news-article-img" src="../wp-content/themes/christophe/images/news-img.png"></img>
-				<h3 class="news-article-title">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h3>
-				<p class="news-article-text">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-				<button class="news-read-more">Read more</button>
-			</div>
-			<div class="col-lg-4 new-article">
-				<img class="news-article-img" src="../wp-content/themes/christophe/images/news-img.png"></img>
-				<h3 class="news-article-title">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h3>
-				<p class="news-article-text">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-				<button class="news-read-more">Read more</button>
-			</div>
+			<?php } ?>			
 		</article>
 	</div>
 </section>

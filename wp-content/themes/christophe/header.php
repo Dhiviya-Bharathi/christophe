@@ -42,7 +42,9 @@ $(document).ready(function(){
 </html>
 <body>
 <header>
-	<h3>CHRISTOPHE BUECHER</h3>
+	<a href="<?php echo site_url(); ?>"	>
+		<h3>CHRISTOPHE BUECHER</h3>
+	</a>
 	<span class="menu-icon">
 		<img class="open-icon" src="../wp-content/themes/christophe/images/open.png"></img>
 		<img class="close-icon hide-icon" src="../wp-content/themes/christophe/images/close.png"></img>
@@ -50,7 +52,7 @@ $(document).ready(function(){
 </header>
 <nav id="menu" class="menu">
 	<ul class="menu-list">
-		<a href="/christophe" class="menu-anchor">
+		<a href="<?php echo site_url(); ?>" class="menu-anchor">
 			<li>		
 				<div class="menu-item">
 					<img src="../wp-content/themes/christophe/images/home.png">				
@@ -60,7 +62,7 @@ $(document).ready(function(){
 				</div>
 			</li>
 		</a>
-		<a href="about"  class="menu-anchor">
+		<a href="<?php echo site_url(); ?>/about"  class="menu-anchor">
 			<li class="about">		
 				<div class="menu-item">
 					<img src="../wp-content/themes/christophe/images/portfolio.png"></img>			
@@ -70,7 +72,7 @@ $(document).ready(function(){
 				</div>
 			</li>
 		</a>
-		<a href="experience"  class="menu-anchor">
+		<a href="<?php echo site_url(); ?>/exp"  class="menu-anchor">
 			<li class="experience">		
 				<div class="menu-item">
 					<img src="../wp-content/themes/christophe/images/newspaper.png"></img>	
@@ -80,7 +82,7 @@ $(document).ready(function(){
 				</div>					
 			</li>
 		</a>
-		<a href="portfolio"  class="menu-anchor">
+		<a href="<?php echo site_url(); ?>/portfolio"  class="menu-anchor">
 			<li class="portfolio">
 				<div class="menu-item">
 					<img src="../wp-content/themes/christophe/images/briefcase.png"></img>	
@@ -90,7 +92,7 @@ $(document).ready(function(){
 				</div>
 			</li>
 		</a>
-		<a href="news"  class="menu-anchor">
+		<a href="<?php echo site_url(); ?>/news"  class="menu-anchor">
 			<li class="news">
 				<div class="menu-item">
 					<img src="../wp-content/themes/christophe/images/graph.png"></img>		
@@ -100,7 +102,7 @@ $(document).ready(function(){
 				</div>
 			</li>
 		</a>
-		<a href="contact"  class="menu-anchor">
+		<a href="<?php echo site_url(); ?>/contact"  class="menu-anchor">
 			<li class="contact">
 				<div class="menu-item">
 					<img src="../wp-content/themes/christophe/images/envelope.png"></img>		
