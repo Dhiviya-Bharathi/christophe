@@ -74,12 +74,13 @@ $(document).ready(function(){
 	</ul>
 </nav>
 </script>
-<section class="container vcenter">
+
+<section class="container vcenter" style="background-image: url('wp-content/themes/christophe/images/<?php echo get_option("home_bg"); ?>');">
 	<div class="main-wrapper">
-		<h1 class="main-name">CHRISTOPHE BUECHER</h1>
-		<p class="main-designation">MANUFACTURING DIRECTOR</p>
+		<h1 class="main-name"><?php echo get_option('home_name'); ?></h1>
+		<p class="main-designation"><?php echo get_option('home_title'); ?></p>
 		<a href="<?php echo site_url(); ?>/about">
-			<button class="main-button">Learn more about him</button>
+			<button class="main-button"><?php echo get_option('home_btn'); ?></button>
 		</a>
 	</div>
 </section>
