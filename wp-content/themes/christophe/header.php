@@ -32,6 +32,10 @@ $(document).ready(function(){
 		$('.menu-icon img').toggleClass('hide-icon');
 		$('#menu').toggle(effect, options, duration);
 	});
+	$('.menu-item').hover(function(){
+		$(this).siblings(".menu-hover-item").show();
+	});
+	
 });
 </script>
 </head>

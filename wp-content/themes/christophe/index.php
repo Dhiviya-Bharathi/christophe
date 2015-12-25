@@ -10,20 +10,21 @@
 <script src="wp-content/themes/christophe/js/bootstrap.min.js"></script>
 <script>
 $(document).ready(function(){
+	var effect = 'slide';
+	var options = { direction: 'right' };
+	var duration = 500;
+	var sectionHeight = $(window).height() - 65;
+	
 	$('.menu').css("position","fixed");
 	$('html, body').css("height","100%");
+	$('.menu').css("height",sectionHeight);
 	
 	$(".menu-icon").click(function () {
-		// Set the effect type
-		var effect = 'slide';
-
-		// Set the options for the effect type chosen
-		var options = { direction: 'right' };
-
-		// Set the duration (default: 400 milliseconds)
-		var duration = 500;
 		$('.menu-icon img').toggleClass('hide-icon');
 		$('#menu').toggle(effect, options, duration);
+	});
+	$('.menu-item').hover(function(){
+		$(this).siblings(".menu-hover-item").show(effect, options, duration);
 	});
 });
 </script>
@@ -39,34 +40,64 @@ $(document).ready(function(){
 </header>
 <nav id="menu" class="menu">
 	<ul class="menu-list">
-		<a href="">
-			<li class="menu-item">
-				<img src="wp-content/themes/christophe/images/home.png"></img>				
+		<a href="/christophe" class="menu-anchor">
+			<li>		
+				<div class="menu-item">
+					<img src="wp-content/themes/christophe/images/home.png">				
+				</div>
+				<div class="menu-hover-item">
+					Home
+				</div>
 			</li>
 		</a>
-		<a href="about">
-			<li class="menu-item about">			
-				<img src="wp-content/themes/christophe/images/portfolio.png"></img>			
+		<a href="about"  class="menu-anchor">
+			<li class="about">		
+				<div class="menu-item">
+					<img src="wp-content/themes/christophe/images/portfolio.png"></img>			
+				</div>
+				<div class="menu-hover-item">
+					About
+				</div>
 			</li>
 		</a>
-		<a href="experience">
-			<li class="menu-item experience">			
-				<img src="wp-content/themes/christophe/images/newspaper.png"></img>			
+		<a href="experience"  class="menu-anchor">
+			<li class="experience">		
+				<div class="menu-item">
+					<img src="wp-content/themes/christophe/images/newspaper.png"></img>	
+				</div>
+				<div class="menu-hover-item">
+					Experience
+				</div>					
 			</li>
 		</a>
-		<a href="portfolio">
-			<li class="menu-item">
-				<img src="wp-content/themes/christophe/images/briefcase.png"></img>			
+		<a href="portfolio"  class="menu-anchor">
+			<li class="portfolio">
+				<div class="menu-item">
+					<img src="wp-content/themes/christophe/images/briefcase.png"></img>	
+				</div>
+				<div class="menu-hover-item">
+					Portfolio
+				</div>
 			</li>
 		</a>
-		<a href="news">
-			<li class="menu-item">
-				<img src="wp-content/themes/christophe/images/graph.png"></img>			
+		<a href="news"  class="menu-anchor">
+			<li class="news">
+				<div class="menu-item">
+					<img src="wp-content/themes/christophe/images/graph.png"></img>		
+				</div>
+				<div class="menu-hover-item">
+					News
+				</div>
 			</li>
 		</a>
-		<a href="contact">
-			<li class="menu-item">
-				<img src="wp-content/themes/christophe/images/envelope.png"></img>			
+		<a href="contact"  class="menu-anchor">
+			<li class="contact">
+				<div class="menu-item">
+					<img src="wp-content/themes/christophe/images/envelope.png"></img>		
+				</div>
+				<div class="menu-hover-item">
+					Contact
+				</div>
 			</li>
 		</a>
 	</ul>

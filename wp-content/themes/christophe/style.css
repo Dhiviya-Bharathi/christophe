@@ -29,6 +29,9 @@ header {
 	height: 65px;
     padding: 20px 20px;
     background-color: white;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
 }
 header h3 {
 	margin: 0;
@@ -53,14 +56,46 @@ h6 {
     background-color: #686868;
     position: relative;
     right: 0;
+	z-index: 99;
+    margin-top: 67px;
+}
+.menu-anchor {
+	height: 65px;
+}
+.menu-anchor li {
+	list-style: none;
 }
 .menu-item {
     list-style: none;
     color: white;
-    padding: 20px;
+    padding: 19px;
     margin-bottom: 1px;
     background-color: #161614;
-	cursor: pointer;
+    cursor: pointer;
+}
+.menu-item:hover {
+	padding: 18px;
+	border-top: 1px solid white;
+    border-bottom: 1px solid white;
+}
+.menu-hover-item {
+    height: 61px;
+    width: 195px;
+	padding: 10px 0;
+    top: -62px;
+    position: relative;
+    right: 195px;
+    z-index: 99;
+    background-color: black;
+    border: 1px solid white;
+    border-right: 0;
+    text-align: center;
+    font-size: 24px;
+    color: white;
+    font-family: roboto-Medium;
+    text-transform: uppercase;
+	display: none;
+	text-decoration: none;
 }
 .menu-list {
 	padding: 0;
@@ -78,6 +113,8 @@ section.vcenter {
 	height: 90%; 
     width:100%;
     display:flex;
+	top: 67px;
+    position: relative;
     align-items: center;
 	background-image: url('http://localhost/christophe/wp-content/themes/christophe/images/home_image.png');
 	background-color: #2B2B2B;
@@ -118,8 +155,10 @@ section.vcenter {
 
 .about-section, .experience-section, .news-section, .contact-section {
 	background-color: #F3F1F2;
-	font-family: roboto-light;
-	height: auto;
+    font-family: roboto-light;
+    height: auto;
+    top: 70px;
+    position: relative;
 }
 .about-image {
 	float: left;
