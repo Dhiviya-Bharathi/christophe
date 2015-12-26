@@ -156,7 +156,7 @@ section.vcenter {
 
 /*******************About********************/
 
-.about-section, .experience-section, .news-section, .contact-section {
+.about-section, .experience-section, .news-section, .contact-section, .portfolio-section {
 	background-color: #F3F1F2;
     font-family: roboto-light;
     height: auto;
@@ -176,6 +176,7 @@ section.vcenter {
 	background-color: #161614;
 	padding: 15px 0;
 	position: relative;
+	top: 65px;
     left: 0;
     bottom:0;
 }

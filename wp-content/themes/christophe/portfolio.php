@@ -9,6 +9,7 @@
 
 get_header();?>
 <script src="../wp-content/themes/christophe/js/isotope.pkgd.min.js"></script>
+<section class="portfolio-section">
 <div class="button-group filter-button-group">
   <button data-filter="*">show all</button>
   <button data-filter=".metal">metal</button>
@@ -27,7 +28,7 @@ get_header();?>
   <div class="element-item halogen nonmetal">.halogen..</div>
   <div class="element-item alkaline-earth metal">..alkaline.</div>
 </div>
-
+</section>
 <script type="text/javascript">
 // init Isotope
 var $grid = $('.grid').isotope({
@@ -40,4 +41,4 @@ $('.filter-button-group').on( 'click', 'button', function() {
   $grid.isotope({ filter: filterValue });
 });
 </script>
-
+<?php get_footer(); ?>
