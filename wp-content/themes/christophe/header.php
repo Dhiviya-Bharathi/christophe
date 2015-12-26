@@ -43,7 +43,7 @@ $(document).ready(function(){
 <body>
 <header>
 	<a href="<?php echo site_url(); ?>"	>
-		<h3>CHRISTOPHE BUECHER</h3>
+		<h3><?php echo get_option('header_txt'); ?></h3>
 	</a>
 	<span class="menu-icon">
 		<img class="open-icon" src="../wp-content/themes/christophe/images/open.png"></img>
