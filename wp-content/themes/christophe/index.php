@@ -32,7 +32,7 @@ $(document).ready(function(){
 <body>
 <header>
 	<a href="<?php echo site_url(); ?>"	>
-		<h3>CHRISTOPHE BUECHER</h3>
+		<h3><?php echo get_option('header_txt'); ?></h3>
 	</a>
 	<span class="menu-icon">
 		<img class="open-icon" src="wp-content/themes/christophe/images/open.png"></img>
@@ -79,7 +79,7 @@ $(document).ready(function(){
 	<div class="main-wrapper">
 		<h1 class="main-name"><?php echo get_option('home_name'); ?></h1>
 		<p class="main-designation"><?php echo get_option('home_title'); ?></p>
-		<a href="<?php echo site_url(); ?>/about">
+		<a href="<?php echo site_url().'/'.get_option('home_btn_url'); ?>">
 			<button class="main-button"><?php echo get_option('home_btn'); ?></button>
 		</a>
 	</div>

@@ -23,11 +23,11 @@ get_header(); ?>
 		<h6>News</h6>		
 		<article class="row">
 			<?php foreach ($posts_array as $key => $value) { ?>
-			<div class="col-lg-4 new-article">
+			<div class="col-lg-4 col-md-4 new-article">
 				<?php $post_img = wp_get_attachment_url( get_post_thumbnail_id($value->ID) ); ?>
 				<div class="col-md-12 no-padd"><center><img style="max-width:100%;" class="news-article-img" src="<?php echo $post_img; ?>"></img></center></div>
 				<h3 class="news-article-title"><?php echo $value->post_title; ?></h3>
-				<p class="news-article-text"><?php echo $value->post_content; ?></p>
+				<p class="news-article-text"><?php $small = substr($value->post_content, 0, 100); echo $small.'...'; ?></p>
 				<button class="news-read-more" data-toggle="modal" data-target="#myModal_<?php echo $value->ID; ?>">Read more</button>
 			</div>
 			<div class="modal fade" id="myModal_<?php echo $value->ID; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

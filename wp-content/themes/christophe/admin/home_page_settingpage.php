@@ -1,6 +1,12 @@
 <div class="wrap">
 	<form id="key-form" action="?page=Home_Page_Settings" method="post" enctype="multipart/form-data"> <!-- please don't change the id -->
-		<table class="form-table">	
+		<table class="form-table">
+			<tr>
+				<td><strong>Header Text</strong></td>
+				<td>
+				<input type="text" name="header_txt" value="<?php echo get_option("header_txt");?>" style="width: 500px;">
+				</td>
+			</tr>	
 			<tr>
 				<td><strong>Name</strong></td>
 				<td>
@@ -17,6 +23,36 @@
 				<td><strong>Button text</strong></td>
 				<td>
 				<input type="text" name="home_btn" value="<?php echo get_option("home_btn");?>" style="width: 500px;">
+				</td>
+			</tr>
+			<tr>
+				<td><strong>Button url</strong></td>
+				<td>
+				<input type="text" placeholder="pagename" name="home_btn_url" value="<?php echo get_option("home_btn_url");?>" style="width: 500px;">
+				</td>
+			</tr>
+			<tr>
+				<td><strong>Copyrigth text</strong></td>
+				<td>
+				<input type="text" name="foot_copy" value="<?php echo get_option("foot_copy");?>" style="width: 500px;">
+				</td>
+			</tr>
+			<tr>
+				<td><strong>Face Book Url</strong></td>
+				<td>
+				<input type="text" placeholder="https://" name="fb_url" value="<?php echo get_option("fb_url");?>" style="width: 500px;">
+				</td>
+			</tr>
+			<tr>
+				<td><strong>Twitter Url</strong></td>
+				<td>
+				<input type="text" placeholder="https://" name="twt_url" value="<?php echo get_option("twt_url");?>" style="width: 500px;">
+				</td>
+			</tr>
+			<tr>
+				<td><strong>LikedIn Url</strong></td>
+				<td>
+				<input type="text" placeholder="https://" name="link_url" value="<?php echo get_option("link_url");?>" style="width: 500px;">
 				</td>
 			</tr>
 			<tr>
