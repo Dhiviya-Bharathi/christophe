@@ -21,12 +21,24 @@ function exp_Menu() {
 function Home_Page_Settings(){
 	global $_FILES,$wpdb;
 
+	if($_POST['header_txt'])
+	update_option('header_txt',$_POST['header_txt']);
 	if($_POST['home_name'])
 	update_option('home_name',$_POST['home_name']);
 	if($_POST['home_title'])
 	update_option('home_title',$_POST['home_title']);
 	if($_POST['home_btn'])
-	update_option('home_btn',$_POST['home_btn']);	
+	update_option('home_btn',$_POST['home_btn']);
+	if($_POST['home_btn_url'])
+	update_option('home_btn_url',$_POST['home_btn_url']);	
+	if($_POST['foot_copy'])
+	update_option('foot_copy',$_POST['foot_copy']);
+	if($_POST['fb_url'])
+	update_option('fb_url',$_POST['fb_url']);
+	if($_POST['twt_url'])
+	update_option('twt_url',$_POST['twt_url']);
+	if($_POST['link_url'])
+	update_option('link_url',$_POST['link_url']);	
 
 	if($_FILES['home_bg']['name']){
 		$destinationPath = str_replace('/', '\\', plugin_dir_path(__FILE__));
