@@ -58,11 +58,57 @@ function Home_Page_Settings(){
 	include_once 'admin/home_page_settingpage.php';
 }
 
-function EXP_Page_Settings(){
-	echo $_GET['id'];
-	echo $_GET['edit'];
-	echo $_GET['del'];
-	print_r($_POST);
+function EXP_Page_Settings(){	
+	global $wpdb;	
+
+	$fullquery = "SELECT * FROM `wp_experience`";
+	$fulldata = $wpdb->get_results($fullquery, ARRAY_A);	
+	
+
+	if($_GET['edit']){
+		$oldid = $_GET['edit'];
+		$where = "1 AND id=".$oldid;
+		$query = "SELECT * FROM `wp_experience` WHERE `id` =".$oldid;
+		$olddata = $wpdb->get_results($query, ARRAY_A);	
+		$olddata = $olddata['0'];			
+	}elseif($_GET['del']){		
+			$query = "DELETE FROM `wp_experience` WHERE `id` =".$_GET['del'];
+			$wpdb->get_results($query);	
+			echo "Deleted Successfully";
+	}
+
+	if($_POST){		
+		$exp_from = date('Y-m-d H:i:s' , strtotime($_POST['exp_from']));
+		$exp_to = date('Y-m-d H:i:s' , strtotime($_POST['exp_to']));
+		$exp_title = $_POST['exp_title'];
+		$exp_desc = $_POST['exp_desc'];
+		$oldid = $_POST['old'];
+
+		$query = "INSERT INTO `wp_experience` (
+								`exp_from` ,
+								`exp_to` ,
+								`exp_title` ,
+								`exp_desc`
+								)
+								VALUES (
+								'$exp_from' ,
+								'$exp_to' ,
+								'$exp_title',
+								'$exp_desc'
+								)";
+		if($oldid){
+		$query = "UPDATE `wp_experience` SET 
+					 `exp_from` = '$exp_from' ,
+					 `exp_to` = '$exp_to' ,
+					 `exp_title` = '$exp_title' ,
+					 `exp_desc` = '$exp_desc' 
+					 WHERE `id` =".$oldid;
+		}
+		
+		$wpdb->get_results( $query );  
+		echo "Table updated Successfully";
+	}
+
 	include_once 'admin/exp_page_settingpage.php';
 }
 
