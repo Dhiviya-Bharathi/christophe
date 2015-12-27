@@ -46,6 +46,13 @@ h6 {
 	font-family: "Roboto-Bold";
 	font-size: 24px;
 }
+header a:hover, .main-wrapper a:hover {
+	text-decoration: none;
+}
+#container {
+   min-height:100%;
+   position:relative;
+}
 .menu-icon {
 	float: right;
 	cursor: pointer;
@@ -57,10 +64,10 @@ h6 {
     float: right;
     display: none;
     background-color: #686868;
-    position: relative;
+    position: fixed;
     right: 0;
 	z-index: 99;
-    margin-top: 67px;
+    margin-top: 65px;
 }
 .menu-anchor {
 	height: 65px;
@@ -116,7 +123,7 @@ section.vcenter {
 	height: 90%; 
     width:100%;
     display:flex;
-	top: 67px;
+	top: 65px;
     position: relative;
     align-items: center;
 	background-image: url('http://localhost/christophe/wp-content/themes/christophe/images/home_image.png');
@@ -160,7 +167,7 @@ section.vcenter {
 	background-color: #F3F1F2;
     font-family: roboto-light;
     height: auto;
-    top: 70px;
+    padding: 65px 0 50px 0;
     position: relative;
 }
 .about-image {
@@ -169,16 +176,19 @@ section.vcenter {
 	margin-bottom: 20px;
 }
 
+.about-section article {
+	position: relative;
+	height: auto;
+}
 /******************Footer**********************/
 
 .site-footer {
 	height: 50px;
 	background-color: #161614;
 	padding: 15px 0;
-	position: relative;
-	top: 65px;
-    left: 0;
-    bottom:0;
+	position:absolute;
+	bottom:0;
+	width:100%;
 }
 .footer-copyright {
 	font-family: Roboto-Light;
@@ -202,6 +212,7 @@ section.vcenter {
 }
 .about-content {
 	text-align: justify;
+	line-height: 2em;
 }
 /******************Experience******************/
 

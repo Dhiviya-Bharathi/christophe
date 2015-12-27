@@ -10,32 +10,19 @@
 <script src="../wp-content/themes/christophe/js/bootstrap.min.js"></script>
 <script>
 $(document).ready(function(){
-	var sectionHeight = $(window).height() - 115;
-	console.log(sectionHeight);
-	$('.menu').css({
-		"position":"relative",
-		"min-height": sectionHeight
-	});
-	$('.about-section, .experience-section, .news-section').css({
-		"min-height": sectionHeight
-	});
+
 	$('html, body').css("height","auto");
-	$(".menu-icon").click(function () {
-		// Set the effect type
+	$(".menu-icon").click(function () {		
 		var effect = 'slide';
-
-		// Set the options for the effect type chosen
 		var options = { direction: 'right' };
-
-		// Set the duration (default: 400 milliseconds)
 		var duration = 500;
+		
 		$('.menu-icon img').toggleClass('hide-icon');
 		$('#menu').toggle(effect, options, duration);
 	});
 	/*$('.menu-item').hover(function(){
 		$(this).siblings(".menu-hover-item").show();
 	});*/
-	
 });
 </script>
 </head>

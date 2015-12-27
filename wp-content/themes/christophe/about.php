@@ -1,3 +1,4 @@
+<div id="container">
 <?php
 /**
  * Template Name: About Pages
@@ -31,3 +32,4 @@ $('#menu .about .menu-item').addClass('active');
 </script>
 <?php get_footer();
 ?>
+</div>
