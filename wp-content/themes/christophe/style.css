@@ -52,6 +52,7 @@ header a:hover, .main-wrapper a:hover , a:hover{
 #container {
    min-height:100%;
    position:relative;
+   background-color: #F3F1F2;
 }
 .menu-icon {
 	float: right;
@@ -361,6 +362,36 @@ input.form-control:active, input.form-control:focus, textarea.form-control:activ
 	box-shadow: none;
 }
 
+/****************Model Window************************/
+
+.modal-dialog{
+  width: 70%;
+  max-height: 70%;
+}
+.modal-body img {
+	float: right;
+	padding-left: 20px;
+}
+.modal-body p {
+	text-align: justify;
+	padding-left: 20px;
+}
+.modal-body {
+	overflow: auto;
+	height: 70%;
+}
+.modal-header {
+    padding-left: 35px;
+    background-color: #F3F1F2;
+	font-family: roboto-Medium;
+}
+.modal-header .mini-text {
+	font-family: roboto-light;
+	font-size: 12px;
+}
+.modal-content {
+	border-radius: 0;
+}
 @media only screen and (max-width: 480px) {
 	.main-name {
 		font-size: 24px;
@@ -387,6 +418,10 @@ input.form-control:active, input.form-control:focus, textarea.form-control:activ
 @media only screen and (max-width: 760px) {
 	section.vcenter { 
 		align-items: flex-end;
+	}
+	.modal-dialog{
+	  width: 90%;
+	  margin: 10px auto;
 	}
 }
 @media only screen and (min-width: 481px) and (max-width: 1000px) {

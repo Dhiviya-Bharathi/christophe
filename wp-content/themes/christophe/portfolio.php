@@ -1,3 +1,4 @@
+<div id="container">
 <?php
 /**
  * Template Name: Port-Folio Pages
@@ -63,3 +64,4 @@ $('.filter-button-group').on( 'click', 'button', function() {
 </script>
 
 <?php get_footer(); ?>
+</div>
