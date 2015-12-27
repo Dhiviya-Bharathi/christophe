@@ -109,7 +109,7 @@ $(document).ready(function(){
 </script>
 
 <section class="container vcenter" style="background-image: url('wp-content/themes/christophe/images/<?php echo get_option("home_bg"); ?>');">
-	<div class="main-wrapper">
+	<div class="main-wrapper col-lg-5 col-lg-offset-1 col-md-6 col-sm-8 col-xs-12">
 		<h1 class="main-name"><?php echo get_option('home_name'); ?></h1>
 		<p class="main-designation"><?php echo get_option('home_title'); ?></p>
 		<a href="<?php echo site_url().'/'.get_option('home_btn_url'); ?>">

@@ -1,3 +1,4 @@
+<div id="container">
 <?php
 /**
  * Template Name: Experiance Pages
@@ -14,29 +15,29 @@ get_header();
 <section class="experience-section">
 	<article class="container">		
 		<h6>Experience</h6>	
-		<div class="row col-lg-12">
-			<div class="exp-head col-lg-4 col-lg-offset-4">
+		<div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<div class="exp-head col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-offset-4 col-sm-6 col-xs-12">
 				CHRISTOPHE BUECHER
 			</div>
 		</div>
 		<?php foreach ($fulldata as $key => $value) { ?>
-		<div class="row col-lg-12">
-			<div class="exp-date-wrap col-lg-6">
-				<div class="exp-date col-lg-6 col-lg-offset-4">
+		<div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<div class="exp-date-wrap col-lg-6 col-md-6 col-sm-6 col-xs-6">
+				<div class="exp-date col-lg-6 col-lg-offset-4 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12">
 					<?php echo date('F Y', strtotime($value['exp_from']));?> - <?php echo date('F Y', strtotime($value['exp_to']));?>
 				</div>
 			</div>
 			<span class="milestone"></span>
-			<div class="exp-role-wrap col-lg-6">
-				<div class="exp-role col-lg-8 col-lg-offset-2">
+			<div class="exp-role-wrap col-lg-6 col-md-6 col-sm-6 col-xs-6">
+				<div class="exp-role col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-2 col-sm-10 col-sm-offset-2 col-xs-12">
 					<h5><?php echo $value['exp_title']; ?></h5>
 					<p><?php echo $value['exp_desc']; ?></p>
 				</div>
 			</div>
 		</div>	
 		<?php } ?>
-		<div class="row col-lg-12">
-			<div class="exp-tail col-lg-6">				
+		<div class="row col-lg-12 col-md-12  col-sm-12 col-xs-12">
+			<div class="exp-tail col-lg-6 col-md-6  col-sm-6 col-xs-6">				
 			</div>
 			<span class="milestone-small"></span>
 		</div>
@@ -51,4 +52,5 @@ $('#menu .experience .menu-item').addClass('active');
 </script>
 
 <?php
-get_footer();
+get_footer();?>
+</div>
