@@ -81,7 +81,7 @@
 		var to = jQuery( "#to" ).val();
 		var exptitle = jQuery.trim(jQuery( ".exp_title" ).val());
 		var expdesc = jQuery.trim(jQuery( ".exp_desc" ).val());
-		if(!from && !to && !exptitle && !expdesc){
+		if(!from || !to || !exptitle || !expdesc){
 			jQuery('.error').removeClass('hidden');
 		}else{
 			jQuery('#realsubmit').click();
