@@ -9,29 +9,31 @@
 			<tr>
 				<td><strong>FROM</strong></td>
 				<td>
-				<input id="from" type="text" name="exp_from" value="<?php echo '';?>" style="width: 500px;">
+				<input id="from" type="text" name="exp_from" value="<?php if ($olddata['exp_from']) echo date('d/m/Y',strtotime($olddata['exp_from'])); ?>" style="width: 500px;">
 				</td>
 			</tr>			
 			<tr>
 				<td><strong>TO</strong></td>
 				<td>
-				<input id="to" type="text" name="exp_to" value="<?php echo ''; ?>" style="width: 500px;">
+				<input id="to" type="text" name="exp_to" value="<?php if ($olddata['exp_to']) echo date('d/m/Y',strtotime($olddata['exp_to'])); ?>" style="width: 500px;">
 				</td>
 			</tr>
 			<tr>
 				<td><strong>EXP Title</strong></td>
 				<td>
-				<input type="text" name="exp_title" value="<?php echo ''; ?>" style="width: 500px;">
+				<input type="text" name="exp_title" value="<?php echo $olddata['exp_title']; ?>" style="width: 500px;">
 				</td>
 			</tr>
 			<tr>
 				<td><strong>DESCRIPTION</strong></td>
 				<td>
-				<textarea name="exp_desc" style="width: 500px;"></textarea>
+				<textarea name="exp_desc" style="width: 500px;"><?php echo $olddata['exp_desc']; ?></textarea>
 				</td>
 			</tr>					
 		</table>
-		<p class="submit"><button class="button button-primary" id="submit">Save Changes</button></p>
+		<input type="hidden" name="old" value="<?php echo $olddata['id']; ?>" >
+		<p class="hidden"><input class="button button-primary" id="realsubmit" type="submit">Save Changes</button></p>
+		<p class="submit"><button class="button button-primary" id="submit" >Save Changes</button></p>
 		<p class="hidden error">All fields are mandatory</p>
 	</form>
 </div>
@@ -55,16 +57,18 @@
 		</th>		
 	</thead>
 	<tbody>
+		<?php foreach ($fulldata as $key => $value) { ?>			
 		<tr>
-			<td>jhrfd</td>
-			<td>zdrh65rh</td>
-			<td>jhrfd</td>
-			<td>zdrh65rh</td>
+			<td><?php echo date('F, dS Y', strtotime($value['exp_from']));?></td>
+			<td><?php echo date('F, dS Y', strtotime($value['exp_to']));?></td>
+			<td><?php echo $value['exp_title']; ?></td>
+			<td><?php echo $value['exp_desc']; ?></td>
 			<td>
-				<span><a href="../?id=1">Edit</a></span><br/>
-				<span><a href="../?id=1">Del</a></span>
+				<span><a href="../wp-admin/themes.php?page=EXP_Page_Settings&edit=<?php echo $value['id'];?>">Edit</a></span><br/>
+				<span><a href="../wp-admin/themes.php?page=EXP_Page_Settings&del=<?php echo $value['id'];?>">Del</a></span>
 			</td>
 		</tr>
+		<?php } ?>
 	</tbody>
 </table>
 <script type="text/javascript">	
@@ -80,7 +84,7 @@
 		if(!from && !to && !exptitle && !expdesc){
 			jQuery('.error').removeClass('hidden');
 		}else{
-			jQuery('#expform').submit();
+			jQuery('#realsubmit').click();
 		}
 	});
 </script>
