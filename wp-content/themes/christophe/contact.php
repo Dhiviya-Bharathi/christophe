@@ -1,3 +1,4 @@
+<div id="container">
 <?php
 /**
  * Template Name: Contact Pages
@@ -15,7 +16,7 @@ get_header();?>
 			<h5>CONTACT FORM</h5>
 			<p>Interested in working together? Fill out the below with some of your details and I will get back to you as soon as I can</p>
 			<form role="form">
-				<div class="col-lg-4 form-left">				
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 form-left">				
 				  <div class="form-group">
 					<input type="text" class="form-control" id="name" placeholder="Name">
 				  </div>
@@ -32,10 +33,10 @@ get_header();?>
 					<input type="text" class="form-control" id="subject" placeholder="Subject">
 				  </div>
 				</div>
-				<div class="col-lg-1 form-middle">
+				<div class="col-lg-1 col-md-1 col-sm-1 hidden-xs form-middle">
 					<img src="../wp-content/themes/christophe/images/form-leaf.png"/>
 				</div>
-				<div class="col-lg-7 form-right">
+				<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 form-right">
 					<div class="form-group">
 						<textarea class="form-control" rows="15" id="comment" placeholder="Leave your message here"></textarea>
 					</div>
@@ -54,3 +55,4 @@ $('#menu .contact img').attr("src","../wp-content/themes/christophe/images/conta
 $('#menu .contact .menu-item').addClass('active');
 </script>
 <?php get_footer(); ?>
+</div>
