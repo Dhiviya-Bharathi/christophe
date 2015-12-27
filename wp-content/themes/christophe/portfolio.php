@@ -33,16 +33,16 @@ get_header();?>
 	<h6>Portfolio</h6>
 	<p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>	
 	<div class="button-group filter-button-group">
-	  <button class="button" data-filter="*">show all</button>
-	  <?php 
-	  foreach ($subcategories as $key => $value) { ?>    
-		<button class="button" data-filter=".<?php print_r($value->name); ?>"><?php print_r($value->name); ?></button>  
-	  <?php  } ?>
+	    <button class="button" data-filter="*">show all</button>
+		  <?php 
+		  foreach ($subcategories as $key => $value) { ?>    
+			<button class="button" data-filter=".<?php echo str_replace(' ', '_', $value->name); ?>"><?php print_r($value->name); ?></button>  
+		  <?php  } ?>
 	</div>
 	<div class="row grid">
 		  <?php foreach ($posts_array as $key => $value) {    
-		  $eachcat = wp_get_post_categories($value->ID); $cat = get_category($eachcat['0']); ?> 
-		  <div class="element-item col-md-4 col-lg-3 col-sm-6 col-xs-12 <?php print_r($cat->name); ?>">
+			$eachcat = wp_get_post_categories($value->ID); $cat = get_category($eachcat['0']); ?> 
+		  <div class="element-item col-md-4 col-lg-3 col-sm-6 col-xs-12 <?php echo str_replace(' ', '_', $cat->name); ?>">
 			<?php $post_img = wp_get_attachment_url( get_post_thumbnail_id($value->ID) ); ?>
 			<div data-toggle="modal" data-target="#myModal" class="portfolio-image col-lg-12 col-md-12 col-sm-12 col-xs-12">
 			  <center><img style="max-width:100%;" class="news-article-img" src="<?php echo $post_img; ?>"></img></center>
@@ -69,12 +69,14 @@ get_header();?>
 			</div>
 </article>
 </section>
+
 <script type="text/javascript">
 // init Isotope
 var $grid = $('.grid').isotope({
   itemSelector: '.element-item',
   layoutMode: 'fitRows'
 });
+$grid.isotope({ filter: '*' });
 // filter items on button click
 $('.filter-button-group').on( 'click', 'button', function() {
   var filterValue = $(this).attr('data-filter');
