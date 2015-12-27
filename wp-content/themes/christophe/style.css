@@ -29,6 +29,9 @@ header {
 	height: 65px;
     padding: 20px 20px;
     background-color: white;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
 }
 header a h3{
 	color: #333333;
@@ -43,6 +46,14 @@ h6 {
 	font-family: "Roboto-Bold";
 	font-size: 24px;
 }
+header a:hover, .main-wrapper a:hover , a:hover{
+	text-decoration: none;
+}
+#container {
+   min-height:100%;
+   position:relative;
+   background-color: #F3F1F2;
+}
 .menu-icon {
 	float: right;
 	cursor: pointer;
@@ -54,16 +65,52 @@ h6 {
     float: right;
     display: none;
     background-color: #686868;
-    position: relative;
+    position: fixed;
     right: 0;
+	z-index: 99;
+    margin-top: 65px;
+}
+.menu-anchor {
+	height: 65px;
+}
+.menu-anchor li {
+	list-style: none;
+	height: 65px;
 }
 .menu-item {
     list-style: none;
     color: white;
-    padding: 20px;
-    margin-bottom: 1px;
     background-color: #161614;
-	cursor: pointer;
+    cursor: pointer;
+    height: 65px;
+    width: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #686868;
+}
+.menu-item:hover {
+	border-top: 1px solid white;
+    border-bottom: 1px solid white;
+}
+.menu-hover-item {
+    height: 65px;
+    width: 195px;
+	padding: 15px 0;
+    top: -65px;
+    position: relative;
+    right: 195px;
+    z-index: 99;
+    background-color: black;
+    border: 1px solid white;
+    border-right: 0;
+    text-align: center;
+    font-size: 24px;
+    color: white;
+    font-family: roboto-Medium;
+    text-transform: uppercase;
+	display: none;
+	text-decoration: none;
 }
 .menu-list {
 	padding: 0;
@@ -81,7 +128,10 @@ section.vcenter {
 	height: 90%; 
     width:100%;
     display:flex;
-    align-items: center;	
+	top: 65px;
+    position: relative;
+    align-items: center;
+	background-image: url('http://localhost/christophe/wp-content/themes/christophe/images/home_image.png');
 	background-color: #2B2B2B;
 	background-repeat: no-repeat;
 	background-position: right center;
@@ -93,6 +143,7 @@ section.vcenter {
     border-bottom: 2px solid white;
     border-left: 2px solid white;
     border-right: 2px solid white;
+	text-align: center
 }
 .main-designation {
     margin: -24px auto 0;
@@ -102,9 +153,6 @@ section.vcenter {
     text-align: center;
     background-color: #2B2B2B;
     width: 70%;
-}
-.main-wrapper {
-	margin-left: 10%;
 }
 .main-button {
 	border: 2px solid white;
@@ -118,10 +166,12 @@ section.vcenter {
 
 /*******************About********************/
 
-.about-section, .experience-section, .news-section, .contact-section {
+.about-section, .experience-section, .news-section, .contact-section, .portfolio-section {
 	background-color: #F3F1F2;
-	font-family: roboto-light;
-	height: auto;
+    font-family: roboto-light;
+    height: auto;
+    padding: 65px 0 50px 0;
+    position: relative;
 }
 .about-image {
 	float: left;
@@ -129,15 +179,19 @@ section.vcenter {
 	margin-bottom: 20px;
 }
 
+.about-section article {
+	position: relative;
+	height: auto;
+}
 /******************Footer**********************/
 
 .site-footer {
 	height: 50px;
 	background-color: #161614;
 	padding: 15px 0;
-	position: relative;
-    left: 0;
-    bottom:0;
+	position:absolute;
+	bottom:0;
+	width:100%;
 }
 .footer-copyright {
 	font-family: Roboto-Light;
@@ -159,7 +213,10 @@ section.vcenter {
 .menu-item.active {
 	background-color: white;
 }
-
+.about-content {
+	text-align: justify;
+	line-height: 2em;
+}
 /******************Experience******************/
 
 .exp-head {
@@ -174,7 +231,7 @@ section.vcenter {
 	background-color: black;
     color: white;
     font-family: Roboto-Light;
-    height: 40px;
+    height: auto;
     padding: 10px 20px;
     text-align: center;
     margin-top: 65px;
@@ -194,11 +251,10 @@ section.vcenter {
 	color: #676767;
 }
 .exp-role-wrap {
-	border-left: 1px solid black;
+	border-left: 2px solid black;
 	padding-bottom: 2px;
 }
 .exp-date-wrap {
-	border-right: 1px solid black;
     padding-bottom: 60px;
 }
 .milestone {
@@ -208,7 +264,7 @@ section.vcenter {
     position: absolute;
     margin-top: 75px;
     border-radius: 50%;
-    margin-left: -10px;
+    margin-left: -9px;
 }
 .milestone-small {
 	width: 10px;
@@ -221,7 +277,7 @@ section.vcenter {
 }
 .exp-tail {
 	height: 65px;
-	margin-left: 1px;
+	margin-left: 2px;
 	border-right: 2px solid black;
 	margin-bottom: 65px;
 }
@@ -304,4 +360,129 @@ input.form-control:active, input.form-control:focus, textarea.form-control:activ
 	border: 1px solid #cccccc;
 	border-left: 4px solid #CCCCCC;
 	box-shadow: none;
+}
+
+/****************Model Window************************/
+
+.modal-dialog{
+  width: 70%;
+  max-height: 70%;
+}
+.modal-body img {
+	float: right;
+	padding-left: 20px;
+}
+.modal-body p {
+	text-align: justify;
+	padding-left: 20px;
+}
+.modal-body {
+	overflow: auto;
+	height: 70%;
+}
+.modal-header {
+    padding-left: 35px;
+    background-color: #F3F1F2;
+	font-family: roboto-Medium;
+}
+.modal-header .mini-text {
+	font-family: roboto-light;
+	font-size: 12px;
+}
+.modal-content {
+	border-radius: 0;
+}
+
+/*******************Portfolio section****************/
+.portfolio-section .button {
+	border: 2px solid black;
+    background-color: transparent;
+    color: black;
+    padding: 5px 20px;
+    text-transform: capitalize;
+	margin-bottom: 10px;
+}
+.portfolio-section .button:hover{
+    background-color: black;
+    color: white;
+    text-transform: capitalize;
+}
+.element-item {
+    padding: 0 5px 0 5px;
+    margin-bottom: 20px;
+	margin-right: 0;
+	cursor: pointer;
+}
+.element-item div{
+    padding: 0;
+}
+.button-group {
+	margin-bottom: 20px;
+}
+/*.element-item span{
+    position: absolute;
+    top: 200px;
+    left: 0;
+    width: 100%;
+	height: 100%;
+}*/
+.grid {
+	margin: 0;
+}
+.portfolio-image .outer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.9;
+    padding: 15px;
+	display: none;
+}
+.portfolio-image .inner {
+	border: 1px solid white;
+	display: flex;
+    align-items: center;
+    text-align: center;
+	height: 100%;
+	color: white;
+}
+
+@media only screen and (max-width: 480px) {
+	.main-name {
+		font-size: 24px;
+	}
+	.main-designation { 
+		font-size: 16px;
+	}
+	.main-button { 
+		font-size: 12px;
+	}
+	section.vcenter { 
+		background-position: 75% center;
+	}
+	.exp-date {
+		font-size: 12px;
+	}
+	.exp-role h5 {
+		font-size: 16px;
+	}
+	.exp-role p {
+		font-size: 12px;
+	}
+}
+@media only screen and (max-width: 760px) {
+	section.vcenter { 
+		align-items: flex-end;
+	}
+	.modal-dialog{
+	  width: 90%;
+	  margin: 10px auto;
+	}
+}
+@media only screen and (min-width: 481px) and (max-width: 1000px) {
+	section.vcenter { 
+		background-position: 90% center;
+	}
 }

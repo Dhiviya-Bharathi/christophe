@@ -1,3 +1,4 @@
+<div id="container">
 <?php
 /**
  * Template Name: Contact Pages
@@ -6,9 +7,7 @@
  * @subpackage Christophe Buecher
  * @since Christophe Buecher 1.0
  */
-echo "<pre>";
-print($_POST);
-echo "</pre>";
+
 get_header();?>
 <section class="contact-section">
 	<article class="container">		
@@ -17,7 +16,7 @@ get_header();?>
 			<h5>CONTACT FORM</h5>
 			<p>Interested in working together? Fill out the below with some of your details and I will get back to you as soon as I can</p>
 			<form class="contact_form" action="../contact" method="POST" role="form">
-				<div class="col-lg-4 col-md-4 form-left">				
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 form-left">				
 				  <div class="form-group">
 					<input type="text" class="form-control" name="name" id="name" placeholder="Name">
 				  </div>
@@ -34,10 +33,10 @@ get_header();?>
 					<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
 				  </div>
 				</div>
-				<div class="col-lg-1 col-md-1 form-middle">
+				<div class="col-lg-1 col-md-1 col-sm-1 hidden-xs form-middle">
 					<img src="../wp-content/themes/christophe/images/form-leaf.png"/>
 				</div>
-				<div class="col-lg-7 col-md-7 form-right">
+				<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 form-right">
 					<div class="form-group">
 						<textarea class="form-control" rows="15" name="comment" id="comment" placeholder="Leave your message here"></textarea>
 					</div>
@@ -55,9 +54,9 @@ $('.open-icon').addClass('hide-icon');
 $('.close-icon').removeClass('hide-icon');
 $('#menu').show();
 $('#menu .contact img').attr("src","../wp-content/themes/christophe/images/contact_dark.png");
-$('#menu .contact').addClass('active');
+$('#menu .contact .menu-item').addClass('active');
 
-jQuery(document).on('click','#submit', function(event){
+$(document).on('click','#submit', function(event){
 		event.preventDefault();
 		jQuery('.error').css('color','red');
 		jQuery('.error').addClass('hidden');
@@ -87,3 +86,4 @@ jQuery(document).on('click','#submit', function(event){
 </script>
 
 <?php get_footer(); ?>
+
