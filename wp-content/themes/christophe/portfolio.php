@@ -31,14 +31,14 @@ get_header();?>
   <button data-filter="*">show all</button>
   <?php 
   foreach ($subcategories as $key => $value) { ?>    
-    <button data-filter=".<?php print_r($value->name); ?>"><?php print_r($value->name); ?></button>  
+    <button data-filter=".<?php echo str_replace(' ', '_', $value->name); ?>"><?php print_r($value->name); ?></button>  
   <?php  } ?>
 </div>
 
 <div class="grid col-md-12 col-lg-12">
   <?php foreach ($posts_array as $key => $value) {    
   $eachcat = wp_get_post_categories($value->ID); $cat = get_category($eachcat['0']); ?> 
-  <div class="element-item <?php print_r($cat->name); ?>">
+  <div class="element-item <?php echo str_replace(' ', '_', $cat->name); ?>">
     <?php $post_img = wp_get_attachment_url( get_post_thumbnail_id($value->ID) ); ?>
     <div class="col-md-12">
       <center><img style="max-width:100%;" class="news-article-img" src="<?php echo $post_img; ?>"></img></center>
@@ -54,6 +54,7 @@ var $grid = $('.grid').isotope({
   itemSelector: '.element-item',
   layoutMode: 'fitRows'
 });
+$grid.isotope({ filter: '*' });
 // filter items on button click
 $('.filter-button-group').on( 'click', 'button', function() {
   var filterValue = $(this).attr('data-filter');
