@@ -20,9 +20,11 @@ $(document).ready(function(){
 		$('.menu-icon img').toggleClass('hide-icon');
 		$('#menu').toggle(effect, options, duration);
 	});
-	/*$('.menu-item').hover(function(){
+	$('.menu-item').hover(function(){
 		$(this).siblings(".menu-hover-item").show();
-	});*/
+	}, function(){
+		$(this).siblings(".menu-hover-item").hide();
+	});
 });
 </script>
 </head>
