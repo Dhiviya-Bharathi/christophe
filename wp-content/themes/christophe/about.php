@@ -30,6 +30,6 @@ $('#menu').show();
 $('#menu .about img').attr("src","../wp-content/themes/christophe/images/about_dark.png");
 $('#menu .about .menu-item').addClass('active');
 </script>
+</div>
 <?php get_footer();
 ?>
-</div>

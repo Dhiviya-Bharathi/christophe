@@ -16,7 +16,7 @@ get_header();
 	<article class="container">		
 		<h6>Experience</h6>	
 		<div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12">
-			<div class="exp-head col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-offset-4 col-sm-6 col-xs-12">
+			<div class="exp-head col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-offset-3 col-sm-6 col-xs-12">
 				CHRISTOPHE BUECHER
 			</div>
 		</div>

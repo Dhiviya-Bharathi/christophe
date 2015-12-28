@@ -226,6 +226,30 @@ section.vcenter {
 	font-size: 20px;
 	text-align: center;
 	display: block;
+	z-index: 99;
+}
+.exp-head:after, .exp-head:before {
+	top: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.exp-head:after {
+	border-color: rgba(243, 241, 242, 0);
+	border-top-color: #F3F1F2;
+	border-width: 7px;
+	margin-left: -7px;
+}
+.exp-head:before {
+	border-color: rgba(0, 0, 0, 0);
+	border-top-color: #000000;
+	border-width: 10px;
+	margin-left: -10px;
 }
 .exp-date {
 	background-color: black;
@@ -236,10 +260,47 @@ section.vcenter {
     text-align: center;
     margin-top: 65px;
 }
+.exp-date:after {
+	left: 100%;
+	top: 20px;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: rgba(0, 0, 0, 0);
+	border-left-color: #000000;
+	border-width: 10px;
+	margin-top: -10px;
+}
 .exp-role {
 	border: 2px solid #000000;
 	padding: 10px 20px;
 	margin-top: 65px;
+}
+.exp-role:after, .exp-role:before {
+	right: 100%;
+	top: 20px;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.exp-role:after {
+	border-color: rgba(255, 255, 255, 0);
+	border-right-color: #F3F1F2;
+	border-width: 7px;
+	margin-top: -7px;
+}
+.exp-role:before {
+	border-color: rgba(0, 0, 0, 0);
+	border-right-color: #000000;
+	border-width: 10px;
+	margin-top: -10px;
 }
 .exp-role  h5{
 	font-family: Roboto-Black;
