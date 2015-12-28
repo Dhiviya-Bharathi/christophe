@@ -39,6 +39,10 @@ function Home_Page_Settings(){
 	update_option('twt_url',$_POST['twt_url']);
 	if($_POST['link_url'])
 	update_option('link_url',$_POST['link_url']);	
+	if($_POST['contact_text'])
+	update_option('contact_text',$_POST['contact_text']);
+	if($_POST['portfolio_text'])
+	update_option('portfolio_text',$_POST['portfolio_text']);	
 
 	if($_FILES['home_bg']['name']){
 		$destinationPath = str_replace('/', '\\', plugin_dir_path(__FILE__));

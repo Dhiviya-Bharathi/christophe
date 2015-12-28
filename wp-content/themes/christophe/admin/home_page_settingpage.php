@@ -56,6 +56,18 @@
 				</td>
 			</tr>
 			<tr>
+				<td><strong>Contact Page head title</strong></td>
+				<td>
+				<textarea type="text" placeholder="Contact Page head title" name="contact_text" style="width: 500px;"><?php echo get_option("contact_text");?></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td><strong>Portfolio Page head title</strong></td>
+				<td>
+				<textarea type="text" placeholder="Portfolio Page head title" name="portfolio_text" style="width: 500px;"><?php echo get_option("portfolio_text");?></textarea>
+				</td>
+			</tr>
+			<tr>
 				<td><strong>Backroung image</strong></td>
 				<td>
 					<input type="file" accept="image/*" name="home_bg">

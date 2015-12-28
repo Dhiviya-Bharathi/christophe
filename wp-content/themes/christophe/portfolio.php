@@ -31,7 +31,7 @@ get_header();?>
 <section class="portfolio-section">
 <article class="container">
 	<h6>Portfolio</h6>
-	<p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>	
+	<p><?php echo stripcslashes(get_option('portfolio_text')); ?></p>	
 	<div class="button-group filter-button-group">
 	    <button class="button" data-filter="*">show all</button>
 		  <?php 
