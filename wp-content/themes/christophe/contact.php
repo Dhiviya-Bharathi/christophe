@@ -14,7 +14,7 @@ get_header();?>
 		<h6>Contact</h6>	
 		<div class="contact-article row">
 			<h5>CONTACT FORM</h5>
-			<p>Interested in working together? Fill out the below with some of your details and I will get back to you as soon as I can</p>
+			<p><?php echo stripcslashes(get_option('contact_text')); ?></p>
 			<form class="contact_form" action="../contact" method="POST" role="form">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 form-left">				
 				  <div class="form-group">
