@@ -21,13 +21,13 @@
 			<tr>
 				<td><strong>EXP Title</strong></td>
 				<td>
-				<input type="text" name="exp_title" value="<?php echo $olddata['exp_title']; ?>" style="width: 500px;">
+				<input type="text" class="exp_title" name="exp_title" value="<?php echo $olddata['exp_title']; ?>" style="width: 500px;">
 				</td>
 			</tr>
 			<tr>
 				<td><strong>DESCRIPTION</strong></td>
 				<td>
-				<textarea name="exp_desc" style="width: 500px;"><?php echo $olddata['exp_desc']; ?></textarea>
+				<textarea class="exp_desc" name="exp_desc" style="width: 500px;"><?php echo $olddata['exp_desc']; ?></textarea>
 				</td>
 			</tr>					
 		</table>
