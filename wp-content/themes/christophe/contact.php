@@ -50,9 +50,9 @@ get_header();?>
 </section>
 
 <script>
-$('.open-icon').addClass('hide-icon');
+/*$('.open-icon').addClass('hide-icon');
 $('.close-icon').removeClass('hide-icon');
-$('#menu').show();
+$('#menu').show();*/
 $('#menu .contact img').attr("src","../wp-content/themes/christophe/images/contact_dark.png");
 $('#menu .contact .menu-item').addClass('active');
 

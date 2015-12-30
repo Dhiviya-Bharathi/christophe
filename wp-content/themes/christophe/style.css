@@ -20,7 +20,7 @@
 
 html, body {
 	width: 100%;
-	height: auto;
+	height: 100%;
 	margin: 0 !important;
 	padding: 0;
 }
@@ -124,6 +124,9 @@ header a:hover, .main-wrapper a:hover , a:hover{
 	background-color: black;
 	border: 1px solid #686868;
 }
+img.close-icon {
+    padding: 0 10px;
+}
 section.vcenter {
 	height: 90%; 
     width:100%;
@@ -192,6 +195,7 @@ section.vcenter {
 	position:absolute;
 	bottom:0;
 	width:100%;
+	z-index: 99;
 }
 .footer-copyright {
 	font-family: Roboto-Light;
@@ -548,9 +552,6 @@ input.form-control:active, input.form-control:focus, textarea.form-control:activ
 	}
 }
 @media only screen and (max-width: 760px) {
-	section.vcenter { 
-		align-items: flex-end;
-	}
 	.modal-dialog{
 	  width: 90%;
 	  margin: 10px auto;

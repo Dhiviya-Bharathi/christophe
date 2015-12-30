@@ -56,9 +56,9 @@ get_header(); ?>
 	</div>
 </section>
 <script>
-$('.open-icon').addClass('hide-icon');
+/*$('.open-icon').addClass('hide-icon');
 $('.close-icon').removeClass('hide-icon');
-$('#menu').show();
+$('#menu').show();*/
 $('#menu .news img').attr("src","../wp-content/themes/christophe/images/news-dark.png");
 $('#menu .news .menu-item').addClass('active');
 </script>

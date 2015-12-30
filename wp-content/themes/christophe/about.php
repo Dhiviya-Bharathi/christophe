@@ -24,9 +24,9 @@ get_header();?>
 	</article>
 </section>
 <script>
-$('.open-icon').addClass('hide-icon');
+/*$('.open-icon').addClass('hide-icon');
 $('.close-icon').removeClass('hide-icon');
-$('#menu').show();
+$('#menu').show();*/
 $('#menu .about img').attr("src","../wp-content/themes/christophe/images/about_dark.png");
 $('#menu .about .menu-item').addClass('active');
 </script>
