@@ -83,9 +83,9 @@ $('.filter-button-group').on( 'click', 'button', function() {
   var filterValue = $(this).attr('data-filter');
   $grid.isotope({ filter: filterValue });
 });
-$('.open-icon').addClass('hide-icon');
+/*$('.open-icon').addClass('hide-icon');
 $('.close-icon').removeClass('hide-icon');
-$('#menu').show();
+$('#menu').show();*/
 $('#menu .portfolio img').attr("src","../wp-content/themes/christophe/images/portfolio_dark.png");
 $('#menu .portfolio .menu-item').addClass('active');
 $('.portfolio-image').hover(function(){

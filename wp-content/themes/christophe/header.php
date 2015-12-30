@@ -10,8 +10,6 @@
 <script src="../wp-content/themes/christophe/js/bootstrap.min.js"></script>
 <script>
 $(document).ready(function(){
-
-	$('html, body').css("height","auto");
 	$(".menu-icon").click(function () {		
 		var effect = 'slide';
 		var options = { direction: 'right' };
@@ -20,6 +18,8 @@ $(document).ready(function(){
 		$('.menu-icon img').toggleClass('hide-icon');
 		$('#menu').toggle(effect, options, duration);
 	});
+	var menuHeight = $(window).height() - 65;
+	$('.menu').css("height",menuHeight);
 	$('.menu-item').hover(function(){
 		$(this).siblings(".menu-hover-item").show();
 	}, function(){
