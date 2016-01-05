@@ -5,7 +5,7 @@ add_action('admin_menu', 'Home_Menu');
  *  submenu Fn added under Theme(Apperance Home menu)
  */
 function Home_Menu() {
-	add_submenu_page('themes.php', 'Home Page Settings', 'Home Page Settings', 'manage_options', 'Home_Page_Settings', 'Home_Page_Settings');
+	add_submenu_page('themes.php', 'Home Page Settings', 'Page Settings', 'manage_options', 'Home_Page_Settings', 'Home_Page_Settings');
 }
 
 

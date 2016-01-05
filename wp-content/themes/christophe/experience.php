@@ -7,7 +7,7 @@
  * @subpackage Christophe Buecher
  * @since Christophe Buecher 1.0
  */
-$fullquery = "SELECT * FROM `wp_experience`";
+$fullquery = "SELECT * FROM `wp_experience` ORDER BY `wp_experience`.`exp_to` DESC ";
 $fulldata = $wpdb->get_results($fullquery, ARRAY_A);
 
 get_header();

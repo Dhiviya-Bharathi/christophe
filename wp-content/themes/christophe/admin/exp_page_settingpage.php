@@ -27,7 +27,7 @@
 			<tr>
 				<td><strong>DESCRIPTION</strong></td>
 				<td>
-				<textarea class="exp_desc" name="exp_desc" style="width: 500px;"><?php echo $olddata['exp_desc']; ?></textarea>
+					<?php wp_editor($olddata['exp_desc'], $editor_id, $settings = array('editor_class'=>'exp_desc' , 'textarea_name' => 'exp_desc' ,'media_buttons' => '0','textarea_rows'=>'10')); ?> 				
 				</td>
 			</tr>					
 		</table>
