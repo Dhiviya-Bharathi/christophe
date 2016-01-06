@@ -19,14 +19,14 @@
 				<input type="text" name="foot_copy" value="<?php echo get_option("foot_copy");?>" style="width: 500px;">
 				</td>
 			</tr>
-			<tr>
+			<!-- <tr>
 				<td><strong>Face Book Url</strong></td>
 				<td>
 				<input type="text" placeholder="https://" name="fb_url" value="<?php echo get_option("fb_url");?>" style="width: 500px;">
 				</td>
-			</tr>
+		</tr> -->
 			<tr>
-				<td><strong>Twitter Url</strong></td>
+				<td><strong>Xing Url</strong></td>
 				<td>
 				<input type="text" placeholder="https://" name="twt_url" value="<?php echo get_option("twt_url");?>" style="width: 500px;">
 				</td>
