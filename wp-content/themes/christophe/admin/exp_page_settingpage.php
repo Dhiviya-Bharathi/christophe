@@ -1,7 +1,7 @@
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-
+<script src="//cdn.ckeditor.com/4.5.5/basic/ckeditor.js"></script>	 	
 <div class="wrap">
 	<h2>Experience Page</h2>
 	<form id="expform" action="?page=EXP_Page_Settings" method="post"> <!-- please don't change the id -->
@@ -27,7 +27,7 @@
 			<tr>
 				<td><strong>DESCRIPTION</strong></td>
 				<td>
-					<?php wp_editor($olddata['exp_desc'], $editor_id, $settings = array('editor_class'=>'exp_desc' , 'textarea_name' => 'exp_desc' ,'media_buttons' => '0','textarea_rows'=>'10')); ?> 				
+					<textarea class="exp_desc" name="exp_desc" ><?php echo $olddata['exp_desc']; ?></textarea>					
 				</td>
 			</tr>					
 		</table>
@@ -74,13 +74,15 @@
 <script type="text/javascript">	
 	jQuery( "#from" ).datepicker();
 	jQuery( "#to" ).datepicker();
+
+    CKEDITOR.replace( 'exp_desc' );
 	
 	jQuery(document).on('click','#submit', function(event){
 		event.preventDefault();
 		var from = jQuery( "#from" ).val();
 		var to = jQuery( "#to" ).val();
 		var exptitle = jQuery.trim(jQuery( ".exp_title" ).val());
-		var expdesc = jQuery.trim(jQuery( ".exp_desc" ).val());
+		var expdesc = CKEDITOR.instances['exp_desc'].getData();
 		if(!from || !to || !exptitle || !expdesc){
 			jQuery('.error').removeClass('hidden');
 		}else{
