@@ -26,7 +26,7 @@ $args = array(
 $posts_array = get_posts( $args ); 
 
 get_header();?>
-<script src="../wp-content/themes/christophe/js/isotope.pkgd.min.js"></script>
+
 
 <section class="portfolio-section">
 <article class="container">
@@ -40,15 +40,16 @@ get_header();?>
 		  <?php  } ?>
 	</div>
 	<div class="row grid">
+	<div class="grid-sizer col-md-4 col-lg-3 col-sm-6 col-xs-12"></div>
 		  <?php foreach ($posts_array as $key => $value) {    
 			$eachcat = wp_get_post_categories($value->ID); $cat = get_category($eachcat['0']); ?> 
-		  <div class="element-item col-md-4 col-lg-3 col-sm-6 col-xs-12 <?php echo str_replace(' ', '_', $cat->name); ?>">
+		  <a data-toggle="modal" data-target="#myModal_<?php echo $key; ?>" class="element-item portfolio-image grid-item col-md-4 col-lg-3 col-sm-6 col-xs-12 <?php echo str_replace(' ', '_', $cat->name); ?>">
 			<?php $post_img = wp_get_attachment_url( get_post_thumbnail_id($value->ID) ); ?>
-			<div data-toggle="modal" data-target="#myModal_<?php echo $key; ?>" class="portfolio-image col-lg-12 col-md-12 col-sm-12 col-xs-12">
-			  <center><img style="max-width:100%;" class="news-article-img" src="<?php echo $post_img; ?>"></img></center>
+			<!--<div  class="portfolio-image col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			  <center>--><img style="max-width:100%;" class="news-article-img" src="<?php echo $post_img; ?>"></img><!--</center>-->
 			  <span class="outer"><span class="inner"><?php echo $value->post_title; ?></span></span>
-			</div>
-		  </div>	
+			<!--</div>-->
+		  </a>	
 
 		  <div class="modal fade" id="myModal_<?php echo $key; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 		  <div class="modal-dialog" role="document">
@@ -70,13 +71,21 @@ get_header();?>
 	</div>	
 </article>
 </section>
-
+<style>
+.site-footer {
+	bottom: 0;
+}
+</style>
+<script src="../wp-content/themes/christophe/js/isotope.pkgd.min.js"></script>
 <script type="text/javascript">
 // init Isotope
 var $grid = $('.grid').isotope({
-  itemSelector: '.element-item',
-  layoutMode: 'fitRows'
-});
+	itemSelector: '.grid-item',
+	percentPosition: true,
+	masonry: {
+    // use outer width of grid-sizer for columnWidth
+		columnWidth: '.grid-sizer'
+	}});
 $grid.isotope({ filter: '*' });
 // filter items on button click
 $('.filter-button-group').on( 'click', 'button', function() {
@@ -92,6 +101,9 @@ $('.portfolio-image').hover(function(){
 		$(this).children('.portfolio-image .outer').show();
 	}, function(){
 		$(this).children('.portfolio-image .outer').hide();
+	});
+	$( ".element-item" ).each(function(){
+		console.log($(this).position().top);
 	});
 </script>
 

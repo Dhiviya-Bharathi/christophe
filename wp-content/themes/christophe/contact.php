@@ -43,8 +43,8 @@ get_header();?>
 					<input id="contact_form" type="submit" class="hidden btn" />
 					<button id="submit" class="btn btn-default">Send</button>
 				</div>
-				<p class="hidden error">All fields are mandatory</p>
 			</form>
+			<p class="visibility-hidden error">All fields are mandatory</p>
 		</div>
 	</article>
 </section>
@@ -59,7 +59,7 @@ $('#menu .contact .menu-item').addClass('active');
 $(document).on('click','#submit', function(event){
 		event.preventDefault();
 		jQuery('.error').css('color','red');
-		jQuery('.error').addClass('hidden');
+		jQuery('.error').addClass('visibility-hidden');
 		var name = jQuery.trim(jQuery( "#name" ).val());
 		var lastname = jQuery.trim(jQuery( "#lastName" ).val());
 		var subject = jQuery.trim(jQuery( "#subject" ).val());
@@ -74,7 +74,7 @@ $(document).on('click','#submit', function(event){
 		intRegex = /[0-9 -()+]+$/;
 
 		if(!name || !lastname || !subject || !comment || !email || !phone){
-			jQuery('.error').removeClass('hidden');
+			jQuery('.error').removeClass('visibility-hidden');
 		}else if(!IsEmail(email)) {			
 			jQuery('.error').html('Please provide valid E-mail address').removeClass('hidden');
 		}else if((phone.length < 6) || (!intRegex.test(phone)))	{

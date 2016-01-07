@@ -211,7 +211,6 @@ section.vcenter {
 	background-color: #161614;
 	padding: 15px 0;
 	position:absolute;
-	bottom:0;
 	width:100%;
 	z-index: 99;
 }
@@ -346,6 +345,7 @@ section.vcenter {
 	font-family: RobotoCondensed-Regular;
 	font-size: 16px;
 	color: #676767;
+	word-wrap: break-word;
 }
 .exp-role-wrap {
 	border-left: 2px solid black;
@@ -505,11 +505,19 @@ input.form-control:active, input.form-control:focus, textarea.form-control:activ
     color: white;
     text-transform: capitalize;
 }
-.element-item {
-    padding: 0 5px 0 5px;
+.grid-item {
+    /*padding: 0 5px 0 5px;
     margin-bottom: 20px;
-	margin-right: 0;
+	margin-right: 0;*/
+	    /*display: block;
+    float: left;*/
+    margin-bottom: 20px;
+    border-radius: 5px;
 	cursor: pointer;
+}
+.grid-item  img{
+   /*display: block;
+   max-width: 100%;*/
 }
 .element-item div{
     padding: 0;
@@ -545,6 +553,7 @@ input.form-control:active, input.form-control:focus, textarea.form-control:activ
     text-align: center;
 	height: 100%;
 	color: white;
+	justify-content: center;
 }
 
 @media only screen and (max-width: 480px) {
@@ -581,3 +590,15 @@ input.form-control:active, input.form-control:focus, textarea.form-control:activ
 		background-position: 90% center;
 	}
 }
+
+.grid {
+  max-width: 1200px;
+}
+
+.error {
+	line-height: 3em;
+}
+.visibility-hidden {
+	visibility:hidden !important;
+}
+
