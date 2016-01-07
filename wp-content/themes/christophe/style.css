@@ -337,6 +337,7 @@ section.vcenter {
 	font-family: RobotoCondensed-Regular;
 	font-size: 16px;
 	color: #676767;
+	word-wrap: break-word;
 }
 .exp-role-wrap {
 	border-left: 2px solid black;
@@ -586,5 +587,10 @@ input.form-control:active, input.form-control:focus, textarea.form-control:activ
   max-width: 1200px;
 }
 
-
+.error {
+	line-height: 3em;
+}
+.visibility-hidden {
+	visibility:hidden !important;
+}
 

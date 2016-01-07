@@ -1,5 +1,5 @@
 <div class="clearfix"></div>
-	<footer id="colophon" class="site-footer" role="contentinfo">
+	<footer id="colophon" class="site-footer panel-footer" role="contentinfo">
 		<div class="container">
 			<div class="footer-copyright">
 				<span>&copy;&nbsp;</span>
