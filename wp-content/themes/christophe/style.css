@@ -594,3 +594,28 @@ input.form-control:active, input.form-control:focus, textarea.form-control:activ
 	visibility:hidden !important;
 }
 
+div.try {
+  width   : 200px;
+  height  : 50px;   
+  position: relative;
+  z-index : 1;
+}
+
+div.try:before {
+  content : "";
+  position: absolute;
+  left    : 0;
+  bottom  : 0;
+  height  : 1px;
+  width   : 50%;  / or 100px /
+  border-bottom:1px solid #000;
+}
+div.try:after {
+  content : "";
+  position: absolute;
+  rigth    : 0;
+  bottom  : 0;
+  height  : 1px;
+  width   : 50%;  / or 100px /
+  border-bottom:1px solid #000;
+}

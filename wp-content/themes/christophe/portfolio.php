@@ -79,13 +79,18 @@ get_header();?>
 <script src="../wp-content/themes/christophe/js/isotope.pkgd.min.js"></script>
 <script type="text/javascript">
 // init Isotope
-var $grid = $('.grid').isotope({
+var container = $('.grid');
+ var $grid;
+  imagesLoaded( container, function() {
+ $grid = $('.grid').isotope({
 	itemSelector: '.grid-item',
 	percentPosition: true,
 	masonry: {
     // use outer width of grid-sizer for columnWidth
 		columnWidth: '.grid-sizer'
 	}});
+});
+window.$grid = $grid;
 $grid.isotope({ filter: '*' });
 // filter items on button click
 $('.filter-button-group').on( 'click', 'button', function() {
