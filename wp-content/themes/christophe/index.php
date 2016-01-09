@@ -115,7 +115,6 @@ $(document).ready(function(){
 		<a href="<?php echo site_url().'/'.get_option('home_btn_url'); ?>">
 			<button class="main-button"><?php echo get_option('home_btn'); ?></button>
 		</a>
-		<div class="try">just a try</div>
 	</div>
 </section>
 
