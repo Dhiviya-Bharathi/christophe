@@ -55,6 +55,11 @@ get_header(); ?>
 		</article>
 	</div>
 </section>
+<style>
+.site-footer {
+	bottom: 0;
+}
+</style>
 <script>
 /*$('.open-icon').addClass('hide-icon');
 $('.close-icon').removeClass('hide-icon');
