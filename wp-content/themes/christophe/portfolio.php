@@ -82,7 +82,7 @@ get_header();?>
 var container = $('.grid');
  var $grid;
   imagesLoaded( container, function() {
- $grid = $('.grid').isotope({
+ $grid = container.isotope({
 	itemSelector: '.grid-item',
 	percentPosition: true,
 	masonry: {
@@ -90,7 +90,7 @@ var container = $('.grid');
 		columnWidth: '.grid-sizer'
 	}});
 });
-window.$grid = $grid;
+
 $grid.isotope({ filter: '*' });
 // filter items on button click
 $('.filter-button-group').on( 'click', 'button', function() {
@@ -106,9 +106,6 @@ $('.portfolio-image').hover(function(){
 		$(this).children('.portfolio-image .outer').show();
 	}, function(){
 		$(this).children('.portfolio-image .outer').hide();
-	});
-	$( ".element-item" ).each(function(){
-		console.log($(this).position().top);
 	});
 </script>
 
