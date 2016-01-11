@@ -111,7 +111,11 @@ $(document).ready(function(){
 <section class="container vcenter" style="background-image: url('wp-content/themes/christophe/images/<?php echo get_option("home_bg"); ?>');">
 	<div class="main-wrapper col-lg-5 col-lg-offset-1 col-md-6 col-sm-8 col-xs-12">
 		<h1 class="main-name"><?php echo get_option('home_name'); ?></h1>
-		<p class="main-designation"><?php echo get_option('home_title'); ?></p>
+		<div class="dest-wrapper col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<p class="line col-lg-2 col-md-2 col-sm-2 col-xs-2"></p>
+			<p class="main-designation col-lg-8 col-md-8 col-sm-8 col-xs-8"><?php echo get_option('home_title'); ?></p>
+			<p class="line col-lg-2 col-md-2 col-sm-2 col-xs-2"></p>
+		</div>
 		<a href="<?php echo site_url().'/'.get_option('home_btn_url'); ?>">
 			<button class="main-button"><?php echo get_option('home_btn'); ?></button>
 		</a>
