@@ -76,21 +76,21 @@ get_header();?>
 	bottom: 0;
 }
 </style>
+<script src="../wp-content/themes/christophe/js/imagesloaded.pkgd.min.js"></script>
 <script src="../wp-content/themes/christophe/js/isotope.pkgd.min.js"></script>
 <script type="text/javascript">
-// init Isotope
-var container = $('.grid');
- var $grid;
-  imagesLoaded( container, function() {
- $grid = container.isotope({
-	itemSelector: '.grid-item',
-	percentPosition: true,
-	masonry: {
-    // use outer width of grid-sizer for columnWidth
-		columnWidth: '.grid-sizer'
-	}});
-});
 
+	var container = $('.grid');
+	var $grid;
+
+		$grid = container.isotope({
+			itemSelector: '.grid-item',
+			percentPosition: true
+		});
+		
+$grid.imagesLoaded().progress( function() {
+  $grid.isotope('layout');
+});
 $grid.isotope({ filter: '*' });
 // filter items on button click
 $('.filter-button-group').on( 'click', 'button', function() {
