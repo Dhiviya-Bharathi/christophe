@@ -123,11 +123,12 @@ add_action('wp_ajax_chriscontact', 'chriscontact');
 
 function chriscontact() {	
 	$headers = "MIME-Version: 1.0" . "\r\n";
-	$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";	
-	$headers .= "From: ".$_POST['email']."\r\n";
+	$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 	$admin_email = get_option('admin_email');
 	$subject = $_POST['subject'];
-	if(!wp_mail($admin_email, $subject, $_POST['comment'], $headers)){
+	$message = "Hi Christophe<br/>".$_POST['name']." ".$_POST['lastname']." has contacted you <br/><br/> MailID : ".$_POST['email']."<br/>Phone: ".$_POST['phone']."<br/><br/>".$_POST['comment'];
+	$test = wp_mail($admin_email, $subject, $message, $headers);
+	if(!wp_mail($admin_email, $subject, $message, $headers)){
 		echo json_encode(array("success" => "false"));
 	}else{
 		echo json_encode(array("success" => "true"));		
