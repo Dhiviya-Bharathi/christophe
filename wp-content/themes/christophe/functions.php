@@ -117,3 +117,20 @@ function EXP_Page_Settings(){
 }
 
 add_theme_support( 'post-thumbnails' );
+
+add_action('wp_ajax_nopriv_chriscontact', 'chriscontact');
+add_action('wp_ajax_chriscontact', 'chriscontact');
+
+function chriscontact() {	
+	$headers = "MIME-Version: 1.0" . "\r\n";
+	$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";	
+	$headers .= "From: ".$_POST['email']."\r\n";
+	$admin_email = get_option('admin_email');
+	$subject = $_POST['subject'];
+	if(!wp_mail($admin_email, $subject, $_POST['comment'], $headers)){
+		echo json_encode(array("success" => "false"));
+	}else{
+		echo json_encode(array("success" => "true"));		
+	}
+	exit;
+}

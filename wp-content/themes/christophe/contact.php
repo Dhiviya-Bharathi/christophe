@@ -15,7 +15,7 @@ get_header();?>
 		<div class="contact-article row">
 			<h5>CONTACT FORM</h5>
 			<p><?php echo stripcslashes(get_option('contact_text')); ?></p>
-			<form class="contact_form" action="../contact" method="POST" role="form">
+			<form class="contact_form" method="POST" role="form">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 form-left">				
 				  <div class="form-group">
 					<input type="text" class="form-control" name="name" id="name" placeholder="Name">
@@ -45,6 +45,7 @@ get_header();?>
 				</div>
 			</form>
 			<p class="visibility-hidden error">All fields are mandatory</p>
+			<p class="visibility-hidden succ">Mail send Successfully</p>
 		</div>
 	</article>
 </section>
@@ -63,7 +64,9 @@ $('#menu .contact .menu-item').addClass('active');
 $(document).on('click','#submit', function(event){
 		event.preventDefault();
 		jQuery('.error').css('color','red');
+		jQuery('.succ').css('color','green');
 		jQuery('.error').addClass('visibility-hidden');
+		jQuery('.succ').addClass('visibility-hidden');
 		var name = jQuery.trim(jQuery( "#name" ).val());
 		var lastname = jQuery.trim(jQuery( "#lastName" ).val());
 		var subject = jQuery.trim(jQuery( "#subject" ).val());
@@ -80,13 +83,34 @@ $(document).on('click','#submit', function(event){
 		if(!name || !lastname || !subject || !comment || !email || !phone){
 			jQuery('.error').removeClass('visibility-hidden');
 		}else if(!IsEmail(email)) {			
-			jQuery('.error').html('Please provide valid E-mail address').removeClass('hidden');
+			jQuery('.error').html('Please provide valid E-mail address').removeClass('visibility-hidden');
 		}else if((phone.length < 6) || (!intRegex.test(phone)))	{
-			jQuery('.error').html('Please enter a valid phone number').removeClass('hidden');
+			jQuery('.error').html('Please enter a valid phone number').removeClass('visibility-hidden');
 		}else{
-			jQuery('#contact_form').click();
-		}
-	});
+				var ajaxurl = '<?php echo admin_url('admin-ajax.php');?>';
+				jQuery.post(
+				    ajaxurl,
+				    {
+				        'action': 'chriscontact',
+				        "name":name,
+				        "lastname":lastname,
+				        "subject":subject,
+				        "comment":comment,
+				        "email":email,
+				        "phone":phone	
+				    },
+				    function(response){
+				    	jQuery('#submit').removeAttr('disabled');				    	
+				        var response = jQuery.parseJSON(response);
+				        if (response.success == "true"){	
+				        	jQuery('.succ').removeClass('visibility-hidden');
+				    	}else{
+				    		jQuery('.error').html('Mail not sent try again').removeClass('visibility-hidden');
+				    	}
+				    }
+				);
+		    }
+});
 </script>
 
 <?php get_footer(); ?>
