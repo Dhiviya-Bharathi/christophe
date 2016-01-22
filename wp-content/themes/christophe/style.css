@@ -216,7 +216,7 @@ p.line {
 /******************Footer**********************/
 
 .site-footer {
-	height: 50px;
+	/*height: 50px;*/
 	background-color: #161614;
 	padding: 15px 0;
 	position:absolute;
@@ -231,8 +231,17 @@ p.line {
 }
 .footer-social {
 	display: inline;
-	float: right;
+	/*float: right;*/
 	margin-top: -5px;
+	text-align: right;
+}
+@media screen and (min-width:320px) and (max-width:767px){
+	.footer-social, .footer-copyright {
+		text-align: center;		
+	}
+	.footer-social{
+		margin-top: 0px;
+	}
 }
 .footer-social span{
 	padding-right: 5px;
@@ -308,6 +317,10 @@ p.line {
 	border: 2px solid #000000;
 	padding: 10px 20px;
 	margin-top: 65px;
+	word-wrap: break-word;
+}
+.exp-role h5{
+	word-wrap: break-word;
 }
 .exp-role:after, .exp-role:before {
 	right: 100%;
@@ -349,6 +362,7 @@ p.line {
 	font-family: RobotoCondensed-Bold;
 	font-size: 20px;
 	margin-top: 5px;
+	word-wrap: break-word;
 }
 .exp-role  p{
 	font-family: RobotoCondensed-Regular;
