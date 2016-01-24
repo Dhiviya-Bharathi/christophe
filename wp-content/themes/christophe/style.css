@@ -102,6 +102,9 @@ header a:hover, .main-wrapper a:hover , a:hover{
     cursor: pointer;
     height: 65px;
     width: 65px;
+    display: -webkit-box;
+	-webkit-box-pack: center;
+	-webkit-box-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -148,14 +151,17 @@ img.close-icon {
 section.vcenter {
 	height: 90%; 
     width:100%;
+    display: -webkit-box;
+	-webkit-box-pack: center;
+	-webkit-box-align: center;
     display:flex;
 	top: 65px;
     position: relative;
     align-items: center;
-	background-image: url('http://localhost/christophe/wp-content/themes/christophe/images/home_image.png');
+	background-image: url('/wp-content/themes/christophe/images/home_image.png');
 	background-color: #2B2B2B;
 	background-repeat: no-repeat;
-	background-position: right center;
+	background-position: right center;	
 }
 .main-name {
     font-family: Roboto-bold;
@@ -189,8 +195,10 @@ p.line {
     color: white;
     font-family: Roboto-Medium;
     padding: 5px 10px;
+    display: -webkit-box;
     display: flex;
     margin: 20px auto;
+    
 }
 
 
@@ -409,6 +417,7 @@ p.line {
 }
 .news-article-img {
 	width: auto;
+	max-width: 100%;
 }
 .news-read-more {
 	float: right;
@@ -492,6 +501,8 @@ input.form-control:active, input.form-control:focus, textarea.form-control:activ
 .modal-body img {
 	float: right;
 	padding-left: 20px;
+	width: auto;
+	max-width: 100%;
 }
 .modal-body p {
 	text-align: justify;
