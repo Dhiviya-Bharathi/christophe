@@ -30,7 +30,7 @@ get_header(); ?>
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 					<h3 class="news-article-title"><?php echo $value->post_title; ?></h3>
 					<p class="news-article-text"><?php $small = substr($value->post_content, 0, 100); echo $small.'...'; ?></p>
-					<button class="news-read-more" data-toggle="modal" data-target="#myModal_<?php echo $value->ID; ?>">Read more</button>
+					<button class="news-read-more" data-toggle="modal" data-target="#myModal_<?php echo $value->ID; ?>">Lire plus</button>
 				</div>
 			</div>
 			<div class="modal fade" id="myModal_<?php echo $value->ID; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

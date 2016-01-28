@@ -60,7 +60,7 @@
 		<?php foreach ($fulldata as $key => $value) { ?>			
 		<tr>
 			<td><?php echo date('F, dS Y', strtotime($value['exp_from']));?></td>
-			<td><?php if(strtotime($value['exp_to'])){ echo date('F, dS Y', strtotime($value['exp_to']));} else { echo 'Till now'; } ?></td>
+			<td><?php if(strtotime($value['exp_to'])){ echo date('F, dS Y', strtotime($value['exp_to']));} else { echo 'Maintenant'; } ?></td>
 			<td><?php echo $value['exp_title']; ?></td>
 			<td><?php echo $value['exp_desc']; ?></td>
 			<td>

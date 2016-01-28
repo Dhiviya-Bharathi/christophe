@@ -7,9 +7,18 @@
  * @subpackage Christophe Buecher
  * @since Christophe Buecher 1.0
  */
-$fullquery = "SELECT * FROM `wp_experience` ORDER BY `wp_experience`.`exp_to` DESC ";
+$fullquery = "SELECT * FROM `wp_experience` WHERE `exp_to` != '0000-00-00 00:00:00' ORDER BY `wp_experience`.`exp_to` DESC ";
 $fulldata = $wpdb->get_results($fullquery, ARRAY_A);
 
+$onequery = "SELECT * FROM `wp_experience` WHERE `exp_to` = '0000-00-00 00:00:00' ORDER BY `wp_experience`.`exp_from` DESC ";
+$onedata = $wpdb->get_results($onequery, ARRAY_A);
+
+// echo "<pre>";
+// print_r($onedata);
+// print_r($fulldata);
+$fullclean = array_merge($onedata,$fulldata);
+// print_r($fullclean);
+// echo "</pre>";
 get_header();
 
 $month_name=array("","Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août",
@@ -24,13 +33,13 @@ $month_name=array("","Janvier","Février","Mars","Avril","Mai","Juin","Juillet",
 				<?php echo get_option('header_txt'); ?>
 			</div>
 		</div>
-		<?php foreach ($fulldata as $key => $value) { ?>
+		<?php foreach ($fullclean as $key => $value) { ?>
 		<div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12">
 			<div class="exp-date-wrap col-lg-6 col-md-6 col-sm-6 col-xs-6">
 				<div class="exp-date col-lg-6 col-lg-offset-4 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12">
 					<?php $frmmonth = explode('-', $value['exp_from']); $frmmonth = ltrim($frmmonth['1'],'0');
 					      $tomonth = explode('-', $value['exp_to']); $tomonth = ltrim($tomonth['1'],'0');
-					 echo $month_name[$frmmonth].' '.date('Y', strtotime($value['exp_from']));?> - <?php if(strtotime($value['exp_to'])){ echo $month_name[$tomonth].' '.date('Y', strtotime($value['exp_to']));} else { echo 'Till now'; } ?>
+					 echo $month_name[$frmmonth].' '.date('Y', strtotime($value['exp_from']));?> - <?php if(strtotime($value['exp_to'])){ echo $month_name[$tomonth].' '.date('Y', strtotime($value['exp_to']));} else { echo 'Maintenant'; } ?>
 				</div>
 			</div>
 			<span class="milestone"></span>
