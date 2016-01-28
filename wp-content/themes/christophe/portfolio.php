@@ -20,11 +20,10 @@ $args = array(
   'category_name'    => 'portfolio',
   'order'            => 'DESC',   
   'post_status'      => 'publish',
-  'suppress_filters' => true 
+  'showposts'        => '-1'
 );
 
 $posts_array = get_posts( $args ); 
-
 get_header();?>
 
 

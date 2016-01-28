@@ -12,12 +12,10 @@ $args = array(
 	'category_name'    => 'news',
 	'order'            => 'DESC',		
 	'post_status'      => 'publish',
-	'suppress_filters' => true 
+	'suppress_filters' => true,
+	'showposts'        => '-1'
 );
 $posts_array = get_posts( $args ); 
-// echo "<pre>";
-// print_r($posts_array);
-// echo "</pre>";
 get_header(); ?>
 <section class="news-section">	
 	<div class="container">
