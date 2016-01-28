@@ -32,7 +32,7 @@ get_header();?>
 	<?php the_title( '<h6>', '</h6>' ); ?>
 	<p><?php echo stripcslashes(get_option('portfolio_text')); ?></p>	
 	<div class="button-group filter-button-group">
-	    <button class="button" data-filter="*">show all</button>
+	    <button class="button" data-filter="*">Montrer tout</button>
 		  <?php 
 		  foreach ($subcategories as $key => $value) { ?>    
 			<button class="button" data-filter=".<?php echo str_replace(' ', '_', $value->name); ?>"><?php print_r($value->name); ?></button>  
