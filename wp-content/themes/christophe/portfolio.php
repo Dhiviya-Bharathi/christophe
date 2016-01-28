@@ -12,7 +12,7 @@
 $parentargs = array('name' => 'portfolio');
 $parentcategories = get_categories( $parentargs );
 
-$subargs = array('child_of' => $parentcategories['0']->cat_ID,'hide_empty' => 0,);
+$subargs = array('child_of' => $parentcategories['0']->cat_ID,'hide_empty' => '0',);
 $subcategories = get_categories( $subargs );
 
 $args = array(  
