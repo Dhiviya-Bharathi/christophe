@@ -48,7 +48,7 @@ $(document).ready(function(){
 					<img src="../wp-content/themes/christophe/images/home.png">				
 				</div>
 				<div class="menu-hover-item">
-					Home
+					Accueil
 				</div>
 			</li>
 		</a>
@@ -58,7 +58,7 @@ $(document).ready(function(){
 					<img src="../wp-content/themes/christophe/images/portfolio.png"></img>			
 				</div>
 				<div class="menu-hover-item">
-					About
+					À Propos
 				</div>
 			</li>
 		</a>
@@ -68,7 +68,7 @@ $(document).ready(function(){
 					<img src="../wp-content/themes/christophe/images/newspaper.png"></img>	
 				</div>
 				<div class="menu-hover-item">
-					Experience
+					Expériences
 				</div>					
 			</li>
 		</a>

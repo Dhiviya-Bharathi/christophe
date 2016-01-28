@@ -18,19 +18,19 @@ get_header();?>
 			<form class="contact_form" method="POST" role="form">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 form-left">				
 				  <div class="form-group">
-					<input type="text" class="form-control" name="name" id="name" placeholder="Name">
+					<input type="text" class="form-control" name="name" id="name" placeholder="Prénom">
 				  </div>
 				  <div class="form-group">
-					<input type="text" class="form-control" name="lastName" id="lastName" placeholder="Last Name">
+					<input type="text" class="form-control" name="lastName" id="lastName" placeholder="Nom">
 				  </div>
 				  <div class="form-group">
-					<input type="text" class="form-control" name="phone" id="phone" placeholder="Phone">
+					<input type="text" class="form-control" name="phone" id="phone" placeholder="Téléphone">
 				  </div>
 				  <div class="form-group">
-					<input type="email" class="form-control" name="email" id="email" placeholder="Email Address">
+					<input type="email" class="form-control" name="email" id="email" placeholder="Adresse e-mail">
 				  </div>
 				  <div class="form-group">
-					<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
+					<input type="text" class="form-control" name="subject" id="subject" placeholder="Sujet">
 				  </div>
 				</div>
 				<div class="col-lg-1 col-md-1 col-sm-1 hidden-xs form-middle">
@@ -38,14 +38,14 @@ get_header();?>
 				</div>
 				<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 form-right">
 					<div class="form-group">
-						<textarea class="form-control" rows="15" name="comment" id="comment" placeholder="Leave your message here"></textarea>
+						<textarea class="form-control" rows="15" name="comment" id="comment" placeholder="Laissez-nous votre message ici"></textarea>
 					</div>
 					<input id="contact_form" type="submit" class="hidden btn" />
-					<button id="submit" class="btn btn-default">Send</button>
+					<button id="submit" class="btn btn-default">Envoyer</button>
 				</div>
 			</form>
-			<p class="visibility-hidden error">All fields are mandatory</p>
-			<p class="visibility-hidden succ">Mail send Successfully</p>
+			<p class="visibility-hidden error">Tous les champs sont obligatoires</p>
+			<p class="visibility-hidden succ">Courrier envoyé avec succès</p>
 		</div>
 	</article>
 </section>
