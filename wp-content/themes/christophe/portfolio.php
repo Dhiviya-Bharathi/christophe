@@ -41,8 +41,8 @@ get_header();?>
 	<div class="row grid">
 	<div class="grid-sizer col-md-4 col-lg-3 col-sm-6 col-xs-12"></div>
 		  <?php foreach ($posts_array as $key => $value) {    
-			$eachcat = wp_get_post_categories($value->ID); $cat = get_category($eachcat['0']); ?> 
-		  <a data-toggle="modal" data-target="#myModal_<?php echo $key; ?>" class="element-item portfolio-image grid-item col-md-4 col-lg-3 col-sm-6 col-xs-12 <?php echo str_replace(' ', '_', $cat->name); ?>">
+			$eachcat = wp_get_post_categories($value->ID); $cat = get_category($eachcat['0']); $cat2 = get_category($eachcat['1']); ?> 
+		  <a data-toggle="modal" data-target="#myModal_<?php echo $key; ?>" class="element-item portfolio-image grid-item col-md-4 col-lg-3 col-sm-6 col-xs-12 <?php echo str_replace(' ', '_', $cat->name).' '.str_replace(' ', '_', $cat2->name); ?>">
 			<?php $post_img = wp_get_attachment_url( get_post_thumbnail_id($value->ID) ); ?>
 			<!--<div  class="portfolio-image col-lg-12 col-md-12 col-sm-12 col-xs-12">
 			  <center>--><img style="max-width:100%;" class="news-article-img" src="<?php echo $post_img; ?>"></img><!--</center>-->
