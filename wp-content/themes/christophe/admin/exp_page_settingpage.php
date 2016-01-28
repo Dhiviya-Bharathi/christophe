@@ -60,7 +60,7 @@
 		<?php foreach ($fulldata as $key => $value) { ?>			
 		<tr>
 			<td><?php echo date('F, dS Y', strtotime($value['exp_from']));?></td>
-			<td><?php echo date('F, dS Y', strtotime($value['exp_to']));?></td>
+			<td><?php if(strtotime($value['exp_to'])){ echo date('F, dS Y', strtotime($value['exp_to']));} else { echo 'Till now'; } ?></td>
 			<td><?php echo $value['exp_title']; ?></td>
 			<td><?php echo $value['exp_desc']; ?></td>
 			<td>
@@ -83,7 +83,7 @@
 		var to = jQuery( "#to" ).val();
 		var exptitle = jQuery.trim(jQuery( ".exp_title" ).val());
 		var expdesc = CKEDITOR.instances['exp_desc'].getData();
-		if(!from || !to || !exptitle || !expdesc){
+		if(!from || !exptitle || !expdesc){
 			jQuery('.error').removeClass('hidden');
 		}else{
 			jQuery('#realsubmit').click();

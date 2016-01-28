@@ -29,7 +29,7 @@ get_header();?>
 
 <section class="portfolio-section">
 <article class="container">
-	<h6>Portfolio</h6>
+	<?php the_title( '<h6>', '</h6>' ); ?>
 	<p><?php echo stripcslashes(get_option('portfolio_text')); ?></p>	
 	<div class="button-group filter-button-group">
 	    <button class="button" data-filter="*">show all</button>

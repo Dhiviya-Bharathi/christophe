@@ -19,7 +19,7 @@ $posts_array = get_posts( $args );
 get_header(); ?>
 <section class="news-section">	
 	<div class="container">
-		<h6>News</h6>		
+		<?php the_title( '<h6>', '</h6>' ); ?>
 		<article class="row">
 			<?php foreach ($posts_array as $key => $value) { ?>
 			<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 new-article">

@@ -14,7 +14,7 @@ add_action('admin_menu', 'exp_Menu');
  *  submenu Fn added under Theme(Apperance main menu)
  */
 function exp_Menu() {
-	add_submenu_page('themes.php', 'Experience Page Settings', 'Experience Page Settings', 'manage_options', 'EXP_Page_Settings', 'EXP_Page_Settings');
+	add_menu_page('Experience', 'Experience', 'manage_options', 'EXP_Page_Settings', 'EXP_Page_Settings','','62');
 }
 
 
@@ -83,7 +83,11 @@ function EXP_Page_Settings(){
 
 	if($_POST){		
 		$exp_from = date('Y-m-d H:i:s' , strtotime($_POST['exp_from']));
-		$exp_to = date('Y-m-d H:i:s' , strtotime($_POST['exp_to']));
+		if($_POST['exp_to']) {
+			$exp_to = date('Y-m-d H:i:s' , strtotime($_POST['exp_to']));
+		}else{
+			$exp_to = 0;
+		}
 		$exp_title = $_POST['exp_title'];
 		$exp_desc = $_POST['exp_desc'];
 		$oldid = $_POST['old'];
