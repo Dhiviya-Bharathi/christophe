@@ -11,9 +11,8 @@
 get_header();?>
 <section class="contact-section">
 	<article class="container">		
-		<h6>Contact</h6>	
-		<div class="contact-article row">
-			<?php the_title( '<h5>', '</h5>' ); ?>
+		<?php the_title( '<h6>', '</h6>' ); ?>
+		<div class="contact-article row">			
 			<p><?php echo stripcslashes(get_option('contact_text')); ?></p>
 			<form class="contact_form" method="POST" role="form">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 form-left">				
