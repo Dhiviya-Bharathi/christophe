@@ -7,6 +7,12 @@
  * @subpackage Christophe Buecher
  * @since Christophe Buecher 1.0
  */
+
+// $parentargs = array('id' => '6');
+// $parentcategories = get_categories( $parentargs );
+
+// print_r($parentcategories);
+
 $fullquery = "SELECT * FROM `wp_experience` WHERE `exp_to` != '0000-00-00 00:00:00' ORDER BY `wp_experience`.`exp_to` DESC ";
 $fulldata = $wpdb->get_results($fullquery, ARRAY_A);
 

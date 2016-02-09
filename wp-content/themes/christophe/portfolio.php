@@ -31,12 +31,12 @@ get_header();?>
 <article class="container">
 	<?php the_title( '<h6>', '</h6>' ); ?>
 	<p><?php echo stripcslashes(get_option('portfolio_text')); ?></p>	
-	<div class="button-group filter-button-group">
-	    <button class="button" data-filter="*">Montrer tout</button>
+	<div class="button-group filter-button-group">	    
 		  <?php 
 		  foreach ($subcategories as $key => $value) { ?>    
 			<button class="button" data-filter=".<?php echo str_replace(' ', '_', $value->name); ?>"><?php print_r($value->name); ?></button>  
 		  <?php  } ?>
+		  <button class="button" data-filter="*">Montrer tout</button>
 	</div>
 	<div class="row grid">
 	<div class="grid-sizer col-md-4 col-lg-3 col-sm-6 col-xs-12"></div>
@@ -56,7 +56,7 @@ get_header();?>
 			  <div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				<h4 class="modal-title" id="myModalLabel"><?php echo $value->post_title; ?></h4>
-				<span class="mini-text"><?php echo date('F, dS Y',strtotime($value->post_modified)); ?></span>
+				<span class="mini-text"><?php echo date('F, dS Y',strtotime($value->post_date)); ?></span>
 				<span class="mini-text"><?php echo $cat->name; ?></span>
 			  </div>
 			  <div class="modal-body">
@@ -90,7 +90,7 @@ get_header();?>
 $grid.imagesLoaded().progress( function() {
   $grid.isotope('layout');
 });
-$grid.isotope({ filter: '*' });
+$grid.isotope({ filter: '.Christophe_Buecher' });
 // filter items on button click
 $('.filter-button-group').on( 'click', 'button', function() {
   var filterValue = $(this).attr('data-filter');

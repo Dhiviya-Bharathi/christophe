@@ -63,7 +63,7 @@ function Home_Page_Settings(){
 }
 
 function EXP_Page_Settings(){	
-	global $wpdb;	
+	global $wpdb,$_POST;	
 
 	$fullquery = "SELECT * FROM `wp_experience`";
 	$fulldata = $wpdb->get_results($fullquery, ARRAY_A);	
@@ -86,38 +86,44 @@ function EXP_Page_Settings(){
 		if($_POST['exp_to']) {
 			$exp_to = date('Y-m-d H:i:s' , strtotime($_POST['exp_to']));
 		}else{
-			$exp_to = 0;
+			$exp_to = '0000-00-00 00:00:00';
 		}
 		$exp_title = $_POST['exp_title'];
 		$exp_desc = $_POST['exp_desc'];
+		$exp_cat = $_POST['exp_cat'];
 		$oldid = $_POST['old'];
 
 		$query = "INSERT INTO `wp_experience` (
 								`exp_from` ,
 								`exp_to` ,
 								`exp_title` ,
-								`exp_desc`
+								`exp_cat`,
+								`exp_desc`								
 								)
 								VALUES (
 								'$exp_from' ,
 								'$exp_to' ,
 								'$exp_title',
-								'$exp_desc'
+								'$exp_cat',
+								'$exp_desc'								
 								)";
 		if($oldid){
 		$query = "UPDATE `wp_experience` SET 
 					 `exp_from` = '$exp_from' ,
 					 `exp_to` = '$exp_to' ,
 					 `exp_title` = '$exp_title' ,
-					 `exp_desc` = '$exp_desc' 
+					 `exp_cat` = '$exp_cat',
+					 `exp_desc` = '$exp_desc'					
 					 WHERE `id` =".$oldid;
 		}
 		
 		$wpdb->get_results( $query );  
+		
 		echo "Table updated Successfully";
 	}
 
-	include_once 'admin/exp_page_settingpage.php';
+	ob_flush();
+	include_once 'admin/exp_page_settingpage.php';	
 }
 
 add_theme_support( 'post-thumbnails' );

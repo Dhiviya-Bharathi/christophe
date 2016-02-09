@@ -9,13 +9,13 @@
 			<tr>
 				<td><strong>FROM</strong></td>
 				<td>
-				<input id="from" type="text" name="exp_from" value="<?php if ($olddata['exp_from']) echo date('d/m/Y',strtotime($olddata['exp_from'])); ?>" style="width: 500px;">
+				<input placeholder="mm/dd/yyy" id="from" type="text" name="exp_from" value="<?php if ($olddata['exp_from']) echo date('m/d/Y',strtotime($olddata['exp_from'])); ?>" style="width: 500px;">
 				</td>
 			</tr>			
 			<tr>
 				<td><strong>TO</strong></td>
 				<td>
-				<input id="to" type="text" name="exp_to" value="<?php if ($olddata['exp_to']) echo date('d/m/Y',strtotime($olddata['exp_to'])); ?>" style="width: 500px;">
+				<input placeholder="mm/dd/yyy" id="to" type="text" name="exp_to" value="<?php if ($olddata['exp_to'] == '0000-00-00 00:00:00') {} elseif ($olddata['exp_to']) { echo date('m/d/Y',strtotime($olddata['exp_to'])); } ?>" style="width: 500px;">
 				</td>
 			</tr>
 			<tr>
@@ -29,7 +29,13 @@
 				<td>
 					<textarea class="exp_desc" name="exp_desc" ><?php echo $olddata['exp_desc']; ?></textarea>					
 				</td>
-			</tr>					
+			</tr>	
+			<tr>
+				<td><strong>EXP Category</strong></td>
+				<td>
+				<input type="text" class="exp_cat" name="exp_cat" value="<?php echo $olddata['exp_cat']; ?>" style="width: 500px;">
+				</td>
+			</tr>				
 		</table>
 		<input type="hidden" name="old" value="<?php echo $olddata['id']; ?>" >
 		<p class="hidden"><input class="button button-primary" id="realsubmit" type="submit">Save Changes</button></p>
@@ -53,6 +59,9 @@
 			Experience Desc
 		</th>
 		<th>
+			Experience Category
+		</th>
+		<th>
 			Action
 		</th>		
 	</thead>
@@ -63,6 +72,7 @@
 			<td><?php if(strtotime($value['exp_to'])){ echo date('F, dS Y', strtotime($value['exp_to']));} else { echo 'Maintenant'; } ?></td>
 			<td><?php echo $value['exp_title']; ?></td>
 			<td><?php echo $value['exp_desc']; ?></td>
+			<td><?php echo $value['exp_cat']; ?></td>
 			<td>
 				<span><a href="../wp-admin/themes.php?page=EXP_Page_Settings&edit=<?php echo $value['id'];?>">Edit</a></span><br/>
 				<span><a href="../wp-admin/themes.php?page=EXP_Page_Settings&del=<?php echo $value['id'];?>">Del</a></span>

@@ -39,8 +39,8 @@ get_header(); ?>
 				  <div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 					<h4 class="modal-title" id="myModalLabel"><?php echo $value->post_title; ?></h4>
-					<span class="mini-text">March 07, 2015</span>
-					<span class="mini-text">Responsible de Group</span>
+					<span class="mini-text"><?php echo date('F, dS Y',strtotime($value->post_date)); ?></span>
+				    <span class="mini-text"><?php echo $cat->name; ?></span>
 				  </div>
 				  <div class="modal-body">
 				  	<img class="news-article-img" src="<?php echo $post_img; ?>"></img>
