@@ -29,14 +29,14 @@ get_header();?>
 
 <section class="portfolio-section">
 <article class="container">
-	<?php the_title( '<h6>', '</h6>' ); ?>
+	<?php the_title( '<h6>', '</h6>' ); ?>	
 	<p><?php echo stripcslashes(get_option('portfolio_text')); ?></p>	
 	<div class="button-group filter-button-group">	    
 		  <?php 
 		  foreach ($subcategories as $key => $value) { ?>    
 			<button class="button" data-filter=".<?php echo str_replace(' ', '_', $value->name); ?>"><?php print_r($value->name); ?></button>  
-		  <?php  } ?>
-		  <button class="button" data-filter="*">Montrer tout</button>
+		  <?php  } ?>		  
+		  <button class="button" data-filter="*"><?php echo __('[:fr]Montrer tout[:en]Show All[:de]Show dutch'); ?></button>
 	</div>
 	<div class="row grid">
 	<div class="grid-sizer col-md-4 col-lg-3 col-sm-6 col-xs-12"></div>
