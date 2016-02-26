@@ -137,7 +137,7 @@ function chriscontact() {
 	$admin_email = get_option('admin_email');
 	$subject = $_POST['subject'];
 	$message = "Hi Christophe<br/>".$_POST['name']." ".$_POST['lastname']." has contacted you <br/><br/> MailID : ".$_POST['email']."<br/>Phone: ".$_POST['phone']."<br/><br/>".$_POST['comment'];
-	$test = wp_mail($admin_email, $subject, $message, $headers);
+	
 	if(!wp_mail($admin_email, $subject, $message, $headers)){
 		echo json_encode(array("success" => "false"));
 	}else{

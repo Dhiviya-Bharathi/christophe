@@ -84,7 +84,8 @@ get_header();?>
 
 		$grid = container.isotope({
 			itemSelector: '.grid-item',
-			percentPosition: true
+			percentPosition: true,
+			filter: '.Christophe_Buecher'
 		});
 		
 $grid.imagesLoaded().progress( function() {
