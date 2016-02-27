@@ -103,6 +103,7 @@ $(document).on('click','#submit', function(event){
 				        var response = jQuery.parseJSON(response);
 				        if (response.success == "true"){	
 				        	jQuery('.succ').removeClass('visibility-hidden');
+				        	jQuery('.contact_form').trigger("reset");
 				    	}else{
 				    		jQuery('.error').html('Mail not sent try again').removeClass('visibility-hidden');
 				    	}

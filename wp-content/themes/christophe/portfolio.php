@@ -91,11 +91,14 @@ get_header();?>
 $grid.imagesLoaded().progress( function() {
   $grid.isotope('layout');
 });
+$('.filter-button-group button:first-child').addClass('active');
 $grid.isotope({ filter: '.Christophe_Buecher' });
 // filter items on button click
 $('.filter-button-group').on( 'click', 'button', function() {
   var filterValue = $(this).attr('data-filter');
   $grid.isotope({ filter: filterValue });
+  $('.filter-button-group button').removeClass('active');
+  $(this).addClass('active');
 });
 /*$('.open-icon').addClass('hide-icon');
 $('.close-icon').removeClass('hide-icon');

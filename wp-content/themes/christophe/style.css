@@ -538,7 +538,7 @@ input.form-control:active, input.form-control:focus, textarea.form-control:activ
     text-transform: capitalize;
 	margin-bottom: 10px;
 }
-.portfolio-section .button:hover{
+.portfolio-section .active,.portfolio-section .button:hover{
     background-color: black;
     color: white;
     text-transform: capitalize;
