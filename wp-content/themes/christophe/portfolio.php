@@ -12,7 +12,7 @@
 $parentargs = array('name' => 'portfolio');
 $parentcategories = get_categories( $parentargs );
 
-$subargs = array('child_of' => $parentcategories['0']->cat_ID,'hide_empty' => 0,);
+$subargs = array('child_of' => $parentcategories['0']->cat_ID,'hide_empty' => '0',);
 $subcategories = get_categories( $subargs );
 
 $args = array(  
@@ -20,30 +20,29 @@ $args = array(
   'category_name'    => 'portfolio',
   'order'            => 'DESC',   
   'post_status'      => 'publish',
-  'suppress_filters' => true 
+  'showposts'        => '-1'
 );
 
 $posts_array = get_posts( $args ); 
-
 get_header();?>
 
 
 <section class="portfolio-section">
 <article class="container">
-	<h6>Portfolio</h6>
+	<?php the_title( '<h6>', '</h6>' ); ?>	
 	<p><?php echo stripcslashes(get_option('portfolio_text')); ?></p>	
-	<div class="button-group filter-button-group">
-	    <button class="button" data-filter="*">show all</button>
+	<div class="button-group filter-button-group">	    
 		  <?php 
 		  foreach ($subcategories as $key => $value) { ?>    
 			<button class="button" data-filter=".<?php echo str_replace(' ', '_', $value->name); ?>"><?php print_r($value->name); ?></button>  
-		  <?php  } ?>
+		  <?php  } ?>		  
+		  <button class="button" data-filter="*"><?php echo __('[:fr]Montrer tout[:en]Show All[:de]Show dutch'); ?></button>
 	</div>
 	<div class="row grid">
 	<div class="grid-sizer col-md-4 col-lg-3 col-sm-6 col-xs-12"></div>
 		  <?php foreach ($posts_array as $key => $value) {    
-			$eachcat = wp_get_post_categories($value->ID); $cat = get_category($eachcat['0']); ?> 
-		  <a data-toggle="modal" data-target="#myModal_<?php echo $key; ?>" class="element-item portfolio-image grid-item col-md-4 col-lg-3 col-sm-6 col-xs-12 <?php echo str_replace(' ', '_', $cat->name); ?>">
+			$eachcat = wp_get_post_categories($value->ID); $cat = get_category($eachcat['0']); $cat2 = get_category($eachcat['1']); ?> 
+		  <a data-toggle="modal" data-target="#myModal_<?php echo $key; ?>" class="element-item portfolio-image grid-item col-md-4 col-lg-3 col-sm-6 col-xs-12 <?php echo str_replace(' ', '_', $cat->name).' '.str_replace(' ', '_', $cat2->name); ?>">
 			<?php $post_img = wp_get_attachment_url( get_post_thumbnail_id($value->ID) ); ?>
 			<!--<div  class="portfolio-image col-lg-12 col-md-12 col-sm-12 col-xs-12">
 			  <center>--><img style="max-width:100%;" class="news-article-img" src="<?php echo $post_img; ?>"></img><!--</center>-->
@@ -57,7 +56,7 @@ get_header();?>
 			  <div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				<h4 class="modal-title" id="myModalLabel"><?php echo $value->post_title; ?></h4>
-				<span class="mini-text"><?php echo date('F, dS Y',strtotime($value->post_modified)); ?></span>
+				<span class="mini-text"><?php echo date('F, dS Y',strtotime($value->post_date)); ?></span>
 				<span class="mini-text"><?php echo $cat->name; ?></span>
 			  </div>
 			  <div class="modal-body">
@@ -85,17 +84,21 @@ get_header();?>
 
 		$grid = container.isotope({
 			itemSelector: '.grid-item',
-			percentPosition: true
+			percentPosition: true,
+			filter: '.Christophe_Buecher'
 		});
 		
 $grid.imagesLoaded().progress( function() {
   $grid.isotope('layout');
 });
-$grid.isotope({ filter: '*' });
+$('.filter-button-group button:first-child').addClass('active');
+$grid.isotope({ filter: '.Christophe_Buecher' });
 // filter items on button click
 $('.filter-button-group').on( 'click', 'button', function() {
   var filterValue = $(this).attr('data-filter');
   $grid.isotope({ filter: filterValue });
+  $('.filter-button-group button').removeClass('active');
+  $(this).addClass('active');
 });
 /*$('.open-icon').addClass('hide-icon');
 $('.close-icon').removeClass('hide-icon');

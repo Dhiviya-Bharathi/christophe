@@ -5,7 +5,7 @@ add_action('admin_menu', 'Home_Menu');
  *  submenu Fn added under Theme(Apperance Home menu)
  */
 function Home_Menu() {
-	add_submenu_page('themes.php', 'Home Page Settings', 'Home Page Settings', 'manage_options', 'Home_Page_Settings', 'Home_Page_Settings');
+	add_submenu_page('themes.php', 'Home Page Settings', 'Theme options', 'manage_options', 'Home_Page_Settings', 'Home_Page_Settings');
 }
 
 
@@ -14,7 +14,7 @@ add_action('admin_menu', 'exp_Menu');
  *  submenu Fn added under Theme(Apperance main menu)
  */
 function exp_Menu() {
-	add_submenu_page('themes.php', 'Experience Page Settings', 'Experience Page Settings', 'manage_options', 'EXP_Page_Settings', 'EXP_Page_Settings');
+	add_menu_page('Experience', 'Experience', 'manage_options', 'EXP_Page_Settings', 'EXP_Page_Settings','','62');
 }
 
 
@@ -63,7 +63,7 @@ function Home_Page_Settings(){
 }
 
 function EXP_Page_Settings(){	
-	global $wpdb;	
+	global $wpdb,$_POST;	
 
 	$fullquery = "SELECT * FROM `wp_experience`";
 	$fulldata = $wpdb->get_results($fullquery, ARRAY_A);	
@@ -83,37 +83,65 @@ function EXP_Page_Settings(){
 
 	if($_POST){		
 		$exp_from = date('Y-m-d H:i:s' , strtotime($_POST['exp_from']));
-		$exp_to = date('Y-m-d H:i:s' , strtotime($_POST['exp_to']));
+		if($_POST['exp_to']) {
+			$exp_to = date('Y-m-d H:i:s' , strtotime($_POST['exp_to']));
+		}else{
+			$exp_to = '0000-00-00 00:00:00';
+		}
 		$exp_title = $_POST['exp_title'];
 		$exp_desc = $_POST['exp_desc'];
+		$exp_cat = $_POST['exp_cat'];
 		$oldid = $_POST['old'];
 
 		$query = "INSERT INTO `wp_experience` (
 								`exp_from` ,
 								`exp_to` ,
 								`exp_title` ,
-								`exp_desc`
+								`exp_cat`,
+								`exp_desc`								
 								)
 								VALUES (
 								'$exp_from' ,
 								'$exp_to' ,
 								'$exp_title',
-								'$exp_desc'
+								'$exp_cat',
+								'$exp_desc'								
 								)";
 		if($oldid){
 		$query = "UPDATE `wp_experience` SET 
 					 `exp_from` = '$exp_from' ,
 					 `exp_to` = '$exp_to' ,
 					 `exp_title` = '$exp_title' ,
-					 `exp_desc` = '$exp_desc' 
+					 `exp_cat` = '$exp_cat',
+					 `exp_desc` = '$exp_desc'					
 					 WHERE `id` =".$oldid;
 		}
 		
 		$wpdb->get_results( $query );  
+		
 		echo "Table updated Successfully";
 	}
 
-	include_once 'admin/exp_page_settingpage.php';
+	ob_flush();
+	include_once 'admin/exp_page_settingpage.php';	
 }
 
 add_theme_support( 'post-thumbnails' );
+
+add_action('wp_ajax_nopriv_chriscontact', 'chriscontact');
+add_action('wp_ajax_chriscontact', 'chriscontact');
+
+function chriscontact() {	
+	$headers = "MIME-Version: 1.0" . "\r\n";
+	$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+	$admin_email = get_option('admin_email');
+	$subject = $_POST['subject'];
+	$message = "Hi Christophe<br/>".$_POST['name']." ".$_POST['lastname']." has contacted you <br/><br/> MailID : ".$_POST['email']."<br/>Phone: ".$_POST['phone']."<br/><br/>".$_POST['comment'];
+	
+	if(!wp_mail($admin_email, $subject, $message, $headers)){
+		echo json_encode(array("success" => "false"));
+	}else{
+		echo json_encode(array("success" => "true"));		
+	}
+	exit;
+}

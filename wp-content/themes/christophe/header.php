@@ -2,6 +2,7 @@
 <html>
 <head>
 <?php wp_head(); ?>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../wp-content/themes/christophe/css/bootstrap.min.css"/>
 <link rel="stylesheet" href="../wp-content/themes/christophe/css/font-awesome.min.css"/>
 <link rel="stylesheet" href="../wp-content/themes/christophe/style.css"/>
@@ -47,7 +48,7 @@ $(document).ready(function(){
 					<img src="../wp-content/themes/christophe/images/home.png">				
 				</div>
 				<div class="menu-hover-item">
-					Home
+					Accueil
 				</div>
 			</li>
 		</a>
@@ -57,7 +58,7 @@ $(document).ready(function(){
 					<img src="../wp-content/themes/christophe/images/portfolio.png"></img>			
 				</div>
 				<div class="menu-hover-item">
-					About
+					À Propos
 				</div>
 			</li>
 		</a>
@@ -67,7 +68,7 @@ $(document).ready(function(){
 					<img src="../wp-content/themes/christophe/images/newspaper.png"></img>	
 				</div>
 				<div class="menu-hover-item">
-					Experience
+					Expériences
 				</div>					
 			</li>
 		</a>

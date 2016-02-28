@@ -1,3 +1,11 @@
+/*
+Theme Name: Christophe Buecher
+Author: Damien Berville consultancy Pvt Ltd
+Author URI: www.damienberville.com
+Version: 1.01
+Text Domain: Christophe
+*/
+
 @font-face {
   font-family: "Roboto-Black";
   src: url(../christophe/Roboto/Roboto-Black.ttf) format("truetype");
@@ -94,6 +102,9 @@ header a:hover, .main-wrapper a:hover , a:hover{
     cursor: pointer;
     height: 65px;
     width: 65px;
+    display: -webkit-box;
+	-webkit-box-pack: center;
+	-webkit-box-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -140,14 +151,17 @@ img.close-icon {
 section.vcenter {
 	height: 90%; 
     width:100%;
+    display: -webkit-box;
+	-webkit-box-pack: center;
+	-webkit-box-align: center;
     display:flex;
 	top: 65px;
     position: relative;
     align-items: center;
-	background-image: url('http://localhost/christophe/wp-content/themes/christophe/images/home_image.png');
+	background-image: url('/wp-content/themes/christophe/images/home_image.png');
 	background-color: #2B2B2B;
 	background-repeat: no-repeat;
-	background-position: right center;
+	background-position: right center;	
 }
 .main-name {
     font-family: Roboto-bold;
@@ -181,8 +195,10 @@ p.line {
     color: white;
     font-family: Roboto-Medium;
     padding: 5px 10px;
+    display: -webkit-box;
     display: flex;
     margin: 20px auto;
+    
 }
 
 
@@ -194,6 +210,7 @@ p.line {
     height: auto;
     padding: 65px 0 50px 0;
     position: relative;
+    margin-bottom: 50px;
 }
 .about-image {
 	float: left;
@@ -208,7 +225,7 @@ p.line {
 /******************Footer**********************/
 
 .site-footer {
-	height: 50px;
+	/*height: 50px;*/
 	background-color: #161614;
 	padding: 15px 0;
 	position:absolute;
@@ -223,8 +240,17 @@ p.line {
 }
 .footer-social {
 	display: inline;
-	float: right;
+	/*float: right;*/
 	margin-top: -5px;
+	text-align: right;
+}
+@media screen and (min-width:320px) and (max-width:767px){
+	.footer-social, .footer-copyright {
+		text-align: center;		
+	}
+	.footer-social{
+		margin-top: 0px;
+	}	
 }
 .footer-social span{
 	padding-right: 5px;
@@ -300,6 +326,10 @@ p.line {
 	border: 2px solid #000000;
 	padding: 10px 20px;
 	margin-top: 65px;
+	word-wrap: break-word;
+}
+.exp-role h5{
+	word-wrap: break-word;
 }
 .exp-role:after, .exp-role:before {
 	right: 100%;
@@ -341,6 +371,7 @@ p.line {
 	font-family: RobotoCondensed-Bold;
 	font-size: 20px;
 	margin-top: 5px;
+	word-wrap: break-word;
 }
 .exp-role  p{
 	font-family: RobotoCondensed-Regular;
@@ -388,6 +419,7 @@ p.line {
 }
 .news-article-img {
 	width: auto;
+	max-width: 100%;
 }
 .news-read-more {
 	float: right;
@@ -471,6 +503,8 @@ input.form-control:active, input.form-control:focus, textarea.form-control:activ
 .modal-body img {
 	float: right;
 	padding-left: 20px;
+	width: auto;
+	max-width: 100%;
 }
 .modal-body p {
 	text-align: justify;
@@ -494,6 +528,9 @@ input.form-control:active, input.form-control:focus, textarea.form-control:activ
 }
 
 /*******************Portfolio section****************/
+.portfolio-section,.news-section{
+	margin-bottom: 50px;
+}
 .portfolio-section .button {
 	border: 2px solid black;
     background-color: transparent;
@@ -502,7 +539,7 @@ input.form-control:active, input.form-control:focus, textarea.form-control:activ
     text-transform: capitalize;
 	margin-bottom: 10px;
 }
-.portfolio-section .button:hover{
+.portfolio-section .active,.portfolio-section .button:hover{
     background-color: black;
     color: white;
     text-transform: capitalize;
@@ -569,7 +606,7 @@ input.form-control:active, input.form-control:focus, textarea.form-control:activ
 		font-size: 12px;
 	}
 	section.vcenter { 
-		background-position: 75% center;
+		background-position: 75% 28%;
 	}
 	.exp-date {
 		font-size: 12px;
