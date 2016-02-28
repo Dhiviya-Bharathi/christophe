@@ -13,8 +13,10 @@ add_action('admin_menu', 'exp_Menu');
 /*
  *  submenu Fn added under Theme(Apperance main menu)
  */
+   //add_menu_page ( string $page_title, string $menu_title, string $capability, string $menu_slug, callable $function = '', string $icon_url = '', int $position = null )
 function exp_Menu() {
-	add_menu_page('Experience', 'Experience', 'manage_options', 'EXP_Page_Settings', 'EXP_Page_Settings','','62');
+	//add_menu_page('Experience', 'Experience', 'manage_options', 'EXP_Page_Settings', 'EXP_Page_Settings','','68');
+	add_submenu_page('themes.php', 'Experience', 'Experience', 'manage_options', 'EXP_Page_Settings', 'EXP_Page_Settings');
 }
 
 
@@ -28,7 +30,7 @@ function Home_Page_Settings(){
 	if($_POST['home_title'])
 	update_option('home_title',$_POST['home_title']);
 	if($_POST['home_btn'])
-	update_option('home_btn',$_POST['home_btn']);
+	update_option('home_btn',$_POST['home_btn']);  
 	if($_POST['home_btn_url'])
 	update_option('home_btn_url',$_POST['home_btn_url']);	
 	if($_POST['foot_copy'])
@@ -90,21 +92,21 @@ function EXP_Page_Settings(){
 		}
 		$exp_title = $_POST['exp_title'];
 		$exp_desc = $_POST['exp_desc'];
-		$exp_cat = $_POST['exp_cat'];
+		// $exp_cat = $_POST['exp_cat'];
 		$oldid = $_POST['old'];
 
 		$query = "INSERT INTO `wp_experience` (
 								`exp_from` ,
 								`exp_to` ,
 								`exp_title` ,
-								`exp_cat`,
+								-- `exp_cat`,
 								`exp_desc`								
 								)
 								VALUES (
 								'$exp_from' ,
 								'$exp_to' ,
 								'$exp_title',
-								'$exp_cat',
+								-- '$exp_cat',
 								'$exp_desc'								
 								)";
 		if($oldid){
@@ -112,13 +114,17 @@ function EXP_Page_Settings(){
 					 `exp_from` = '$exp_from' ,
 					 `exp_to` = '$exp_to' ,
 					 `exp_title` = '$exp_title' ,
-					 `exp_cat` = '$exp_cat',
+					 -- `exp_cat` = '$exp_cat',
 					 `exp_desc` = '$exp_desc'					
 					 WHERE `id` =".$oldid;
 		}
 		
-		$wpdb->get_results( $query );  
-		
+		$wpdb->get_results( $query ); 
+		?> 
+		<script>			
+			    location.reload();
+		</script>
+	<?php
 		echo "Table updated Successfully";
 	}
 

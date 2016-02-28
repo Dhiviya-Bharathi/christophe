@@ -51,8 +51,8 @@ $month_name=array("","Janvier","Février","Mars","Avril","Mai","Juin","Juillet",
 			<span class="milestone"></span>
 			<div class="exp-role-wrap col-lg-6 col-md-6 col-sm-6 col-xs-6">
 				<div class="exp-role col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-2 col-sm-10 col-sm-offset-2 col-xs-12">
-					<h5><?php echo $value['exp_title']; ?></h5>
-					<p><?php echo $value['exp_desc']; ?></p>
+					<h5><?php echo _e($value['exp_title']); ?></h5>
+					<p><?php echo _e($value['exp_desc']); ?></p>
 				</div>
 			</div>
 		</div>	
