@@ -42,7 +42,7 @@ get_header();?>
 					<input id="contact_form" type="submit" class="hidden btn" />
 					<button id="submit" class="btn btn-default">Envoyer</button>
 				</div>
-				<div class="col-lg-offset-4 col-md-offset-4 col-sm-offset-4 col-lg-4 col-md-4 col-sm-4 col-xs-12 visibility-hidden msg error">Tous les champs sont obligatoires</div>
+				<div class="col-lg-offset-4 col-md-offset-4 col-sm-offset-4 col-xs-offset-3 col-lg-3 col-md-4 col-sm-4 col-xs-6 msg"></div>
 				<!--<div class="col-lg-offset-4 col-md-offset-4 col-sm-offset-4 col-lg-4 col-md-4 col-sm-4 col-xs-12 visibility-hidden msg succ">Courrier envoyé avec succès<div>-->
 			</form>
 			

@@ -636,7 +636,6 @@ input.form-control:active, input.form-control:focus, textarea.form-control:activ
 
 .msg {
     clear: both;
-    color: white !important;
     display: block;
     /*height: 30px;
     line-height: 0;
@@ -644,12 +643,15 @@ input.form-control:active, input.form-control:focus, textarea.form-control:activ
     margin-top: 20px;
     padding: 10px 0;
     text-align: center;
+	font-weight: bold;
 }
 .succ {
-	background-color: #7BBF6A;
+	color: #7BBF6A;
+	border: 2px solid #7BBF6A;
 }
 .error {
-	background-color: #E71E25;
+	color: #E71E25;
+	border: 2px solid #E71E25;
 }
 .visibility-hidden {
 	visibility:hidden !important;
