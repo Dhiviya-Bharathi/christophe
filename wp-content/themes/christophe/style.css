@@ -354,6 +354,7 @@ p.line {
 }
 .exp-date-wrap {
     padding-bottom: 60px;
+	font-weight: bold;
 }
 .milestone {
 	width: 20px;
@@ -597,7 +598,16 @@ input.form-control:active, input.form-control:focus, textarea.form-control:activ
 }
 
 .error {
-	line-height: 3em;
+	background-color: #e41e25;
+    clear: both;
+    color: white !important;
+    display: block;
+    /*height: 30px;
+    line-height: 0;
+    margin-left: -75px;*/
+    margin-top: 20px;
+    padding: 10px 0;
+    text-align: center;
 }
 .visibility-hidden {
 	visibility:hidden !important;
