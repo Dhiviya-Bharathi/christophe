@@ -14,7 +14,7 @@ if(!$abt_img){
 get_header();?>
 <section class="about-section">
 	<article class="container">
-		<h6>About</h6>
+		<?php the_title( '<h6>', '</h6>' ); ?>
 		<img src="<?php echo $abt_img; ?>" class="about-image"></img>
 		<p class="about-content">
 			<?php 

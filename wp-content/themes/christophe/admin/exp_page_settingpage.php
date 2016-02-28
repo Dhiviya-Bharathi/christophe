@@ -1,7 +1,7 @@
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-
+<script src="//cdn.ckeditor.com/4.5.5/basic/ckeditor.js"></script>	 	
 <div class="wrap">
 	<h2>Experience Page</h2>
 	<form id="expform" action="?page=EXP_Page_Settings" method="post"> <!-- please don't change the id -->
@@ -9,13 +9,13 @@
 			<tr>
 				<td><strong>FROM</strong></td>
 				<td>
-				<input id="from" type="text" name="exp_from" value="<?php if ($olddata['exp_from']) echo date('d/m/Y',strtotime($olddata['exp_from'])); ?>" style="width: 500px;">
+				<input placeholder="mm/dd/yyy" id="from" type="text" name="exp_from" value="<?php if ($olddata['exp_from']) echo date('m/d/Y',strtotime($olddata['exp_from'])); ?>" style="width: 500px;">
 				</td>
 			</tr>			
 			<tr>
 				<td><strong>TO</strong></td>
 				<td>
-				<input id="to" type="text" name="exp_to" value="<?php if ($olddata['exp_to']) echo date('d/m/Y',strtotime($olddata['exp_to'])); ?>" style="width: 500px;">
+				<input placeholder="mm/dd/yyy" id="to" type="text" name="exp_to" value="<?php if ($olddata['exp_to'] == '0000-00-00 00:00:00') {} elseif ($olddata['exp_to']) { echo date('m/d/Y',strtotime($olddata['exp_to'])); } ?>" style="width: 500px;">
 				</td>
 			</tr>
 			<tr>
@@ -27,9 +27,15 @@
 			<tr>
 				<td><strong>DESCRIPTION</strong></td>
 				<td>
-				<textarea class="exp_desc" name="exp_desc" style="width: 500px;"><?php echo $olddata['exp_desc']; ?></textarea>
+					<textarea class="exp_desc" name="exp_desc" ><?php echo $olddata['exp_desc']; ?></textarea>					
 				</td>
-			</tr>					
+			</tr>	
+			<tr>
+				<td><strong>EXP Category</strong></td>
+				<td>
+				<input type="text" class="exp_cat" name="exp_cat" value="<?php echo $olddata['exp_cat']; ?>" style="width: 500px;">
+				</td>
+			</tr>				
 		</table>
 		<input type="hidden" name="old" value="<?php echo $olddata['id']; ?>" >
 		<p class="hidden"><input class="button button-primary" id="realsubmit" type="submit">Save Changes</button></p>
@@ -53,6 +59,9 @@
 			Experience Desc
 		</th>
 		<th>
+			Experience Category
+		</th>
+		<th>
 			Action
 		</th>		
 	</thead>
@@ -60,9 +69,10 @@
 		<?php foreach ($fulldata as $key => $value) { ?>			
 		<tr>
 			<td><?php echo date('F, dS Y', strtotime($value['exp_from']));?></td>
-			<td><?php echo date('F, dS Y', strtotime($value['exp_to']));?></td>
+			<td><?php if(strtotime($value['exp_to'])){ echo date('F, dS Y', strtotime($value['exp_to']));} else { echo 'Maintenant'; } ?></td>
 			<td><?php echo $value['exp_title']; ?></td>
 			<td><?php echo $value['exp_desc']; ?></td>
+			<td><?php echo $value['exp_cat']; ?></td>
 			<td>
 				<span><a href="../wp-admin/themes.php?page=EXP_Page_Settings&edit=<?php echo $value['id'];?>">Edit</a></span><br/>
 				<span><a href="../wp-admin/themes.php?page=EXP_Page_Settings&del=<?php echo $value['id'];?>">Del</a></span>
@@ -74,14 +84,16 @@
 <script type="text/javascript">	
 	jQuery( "#from" ).datepicker();
 	jQuery( "#to" ).datepicker();
+
+    CKEDITOR.replace( 'exp_desc' );
 	
 	jQuery(document).on('click','#submit', function(event){
 		event.preventDefault();
 		var from = jQuery( "#from" ).val();
 		var to = jQuery( "#to" ).val();
 		var exptitle = jQuery.trim(jQuery( ".exp_title" ).val());
-		var expdesc = jQuery.trim(jQuery( ".exp_desc" ).val());
-		if(!from || !to || !exptitle || !expdesc){
+		var expdesc = CKEDITOR.instances['exp_desc'].getData();
+		if(!from || !exptitle || !expdesc){
 			jQuery('.error').removeClass('hidden');
 		}else{
 			jQuery('#realsubmit').click();
