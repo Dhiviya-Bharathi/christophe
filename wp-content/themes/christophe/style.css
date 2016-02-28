@@ -581,7 +581,7 @@ input.form-control:active, input.form-control:focus, textarea.form-control:activ
     width: 100%;
     height: 100%;
     background-color: black;
-    opacity: 0.9;
+    opacity: 0.8;
     padding: 15px;
 	display: none;
 }
