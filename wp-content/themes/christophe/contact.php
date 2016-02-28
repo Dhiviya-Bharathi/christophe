@@ -42,9 +42,10 @@ get_header();?>
 					<input id="contact_form" type="submit" class="hidden btn" />
 					<button id="submit" class="btn btn-default">Envoyer</button>
 				</div>
+				<div class="col-lg-offset-4 col-md-offset-4 col-sm-offset-4 col-lg-4 col-md-4 col-sm-4 col-xs-12 visibility-hidden msg error">Tous les champs sont obligatoires</div>
+				<!--<div class="col-lg-offset-4 col-md-offset-4 col-sm-offset-4 col-lg-4 col-md-4 col-sm-4 col-xs-12 visibility-hidden msg succ">Courrier envoyé avec succès<div>-->
 			</form>
-			<p class="visibility-hidden error">Tous les champs sont obligatoires</p>
-			<p class="visibility-hidden succ">Courrier envoyé avec succès</p>
+			
 		</div>
 	</article>
 </section>
@@ -62,10 +63,11 @@ $('#menu .contact .menu-item').addClass('active');
 
 $(document).on('click','#submit', function(event){
 		event.preventDefault();
-		jQuery('.error').css('color','red');
-		jQuery('.succ').css('color','green');
-		jQuery('.error').addClass('visibility-hidden');
-		jQuery('.succ').addClass('visibility-hidden');
+		/*jQuery('.error').css('color','red');
+		jQuery('.succ').css('color','green');*/
+		jQuery('.msg').addClass('visibility-hidden');
+		jQuery('.msg').removeClass('error, succ');
+		<!--jQuery('.succ').addClass('visibility-hidden');-->
 		var name = jQuery.trim(jQuery( "#name" ).val());
 		var lastname = jQuery.trim(jQuery( "#lastName" ).val());
 		var subject = jQuery.trim(jQuery( "#subject" ).val());
@@ -80,11 +82,12 @@ $(document).on('click','#submit', function(event){
 		intRegex = /[0-9 -()+]+$/;
 
 		if(!name || !lastname || !subject || !comment || !email || !phone){
-			jQuery('.error').removeClass('visibility-hidden');
+			jQuery('.msg').removeClass('visibility-hidden');
+			jQuery('.msg').html('Tous les champs sont obligatoires').addClass('error').removeClass('succ');
 		}else if(!IsEmail(email)) {			
-			jQuery('.error').html('Please provide valid E-mail address').removeClass('visibility-hidden');
+			jQuery('.msg').html('Please provide valid E-mail address').removeClass('visibility-hidden').addClass('error').removeClass('succ');
 		}else if((phone.length < 6) || (!intRegex.test(phone)))	{
-			jQuery('.error').html('Please enter a valid phone number').removeClass('visibility-hidden');
+			jQuery('.msg').html('Please enter a valid phone number').removeClass('visibility-hidden').addClass('error').removeClass('succ');
 		}else{
 				var ajaxurl = '<?php echo admin_url('admin-ajax.php');?>';
 				jQuery.post(
@@ -102,10 +105,10 @@ $(document).on('click','#submit', function(event){
 				    	jQuery('#submit').removeAttr('disabled');				    	
 				        var response = jQuery.parseJSON(response);
 				        if (response.success == "true"){	
-				        	jQuery('.succ').removeClass('visibility-hidden');
+				        	jQuery('.msg').html('Courrier envoyé avec succès').removeClass('visibility-hidden').addClass('succ').removeClass('error');
 				        	jQuery('.contact_form').trigger("reset");
 				    	}else{
-				    		jQuery('.error').html('Mail not sent try again').removeClass('visibility-hidden');
+				    		jQuery('.msg').addClass('error').removeClass('succ').html('Mail not sent try again').removeClass('visibility-hidden');
 				    	}
 				    }
 				);

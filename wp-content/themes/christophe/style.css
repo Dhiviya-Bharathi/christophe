@@ -210,7 +210,7 @@ p.line {
     height: auto;
     padding: 65px 0 50px 0;
     position: relative;
-    margin-bottom: 50px;
+    /*margin-bottom: 50px;*/
 }
 .about-image {
 	float: left;
@@ -634,8 +634,7 @@ input.form-control:active, input.form-control:focus, textarea.form-control:activ
   max-width: 1200px;
 }
 
-.error {
-	background-color: #e41e25;
+.msg {
     clear: both;
     color: white !important;
     display: block;
@@ -646,6 +645,13 @@ input.form-control:active, input.form-control:focus, textarea.form-control:activ
     padding: 10px 0;
     text-align: center;
 }
+.succ {
+	background-color: #7BBF6A;
+}
+.error {
+	background-color: #E71E25;
+}
 .visibility-hidden {
 	visibility:hidden !important;
 }
+
