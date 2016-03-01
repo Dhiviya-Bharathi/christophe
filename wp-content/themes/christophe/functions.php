@@ -104,14 +104,12 @@ function EXP_Page_Settings(){
 								`exp_from` ,
 								`exp_to` ,
 								`exp_title` ,
-								-- `exp_cat`,
 								`exp_desc`								
 								)
 								VALUES (
 								'$exp_from' ,
 								'$exp_to' ,
 								'$exp_title',
-								-- '$exp_cat',
 								'$exp_desc'								
 								)";
 		if($oldid){
@@ -119,7 +117,6 @@ function EXP_Page_Settings(){
 					 `exp_from` = '$exp_from' ,
 					 `exp_to` = '$exp_to' ,
 					 `exp_title` = '$exp_title' ,
-					 -- `exp_cat` = '$exp_cat',
 					 `exp_desc` = '$exp_desc'					
 					 WHERE `id` =".$oldid;
 		}
