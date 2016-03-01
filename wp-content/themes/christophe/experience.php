@@ -33,7 +33,20 @@ $month_name=array("","Janvier","Février","Mars","Avril","Mai","Juin","Juillet",
 
 <section class="experience-section">
 	<article class="container">		
-		<?php the_title( '<h6>', '</h6>' ); ?>
+		<div class="row no-padd col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<?php the_title( '<h6 class="no-padd col-lg-9 col-md-9 col-sm-9 col-xs-9">', '</h6>' ); ?>
+			<span class="no-padd col-lg-3 col-md-3 col-sm-3 col-xs-3">
+				<div class="pull-right">
+					<a href="<?php echo site_url(); ?>/fr/exp">
+					 <img alt="fr" src="<?php echo site_url();?>/wp-content/plugins/qtranslate-x/flags/fr.png">
+					</a><a href="<?php echo site_url(); ?>/en/exp">
+					 <img alt="en" src="<?php echo site_url();?>/wp-content/plugins/qtranslate-x/flags/gb.png">
+					</a><a href="<?php echo site_url(); ?>/de/exp">
+					 <img alt="de" src="<?php echo site_url();?>/wp-content/plugins/qtranslate-x/flags/de.png">				
+					</a> 
+				</div>
+			</span>
+		</div>
 		<div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12">
 			<div class="exp-head col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-offset-3 col-sm-6 col-xs-12">
 				<?php echo get_option('header_txt'); ?>

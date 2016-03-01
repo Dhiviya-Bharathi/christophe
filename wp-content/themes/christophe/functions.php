@@ -13,10 +13,9 @@ add_action('admin_menu', 'exp_Menu');
 /*
  *  submenu Fn added under Theme(Apperance main menu)
  */
-   //add_menu_page ( string $page_title, string $menu_title, string $capability, string $menu_slug, callable $function = '', string $icon_url = '', int $position = null )
+   
 function exp_Menu() {
-	//add_menu_page('Experience', 'Experience', 'manage_options', 'EXP_Page_Settings', 'EXP_Page_Settings','','68');
-	add_submenu_page('themes.php', 'Experience', 'Experience', 'manage_options', 'EXP_Page_Settings', 'EXP_Page_Settings');
+	add_menu_page('Experience', 'Experience', 'manage_options', 'EXP_Page_Settings', 'EXP_Page_Settings','','68');
 }
 
 
@@ -65,8 +64,14 @@ function Home_Page_Settings(){
 }
 
 function EXP_Page_Settings(){	
-	global $wpdb,$_POST;	
 
+	global $wpdb,$_POST;	
+	?>
+	<script type="text/javascript">
+		jQuery('#menu-appearance').removeClass('wp-has-current-submenu');	
+		jQuery('#toplevel_page_EXP_Page_Settings').addClass('current');
+	</script>
+	<?php 
 	$fullquery = "SELECT * FROM `wp_experience`";
 	$fulldata = $wpdb->get_results($fullquery, ARRAY_A);	
 	
