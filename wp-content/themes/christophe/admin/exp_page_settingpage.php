@@ -1,7 +1,13 @@
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"> 
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>  
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-<script src="//cdn.ckeditor.com/4.5.5/basic/ckeditor.js"></script>	 	
+  <script src="//cdn.ckeditor.com/4.5.5/basic/ckeditor.js"></script>
+
+  <script>
+  $(function() {
+    $( "#tabs" ).tabs();
+  });
+  </script>
 <div class="wrap">
 	<h2>Experience Page</h2>
 	<form id="expform" action="?page=EXP_Page_Settings" method="post"> <!-- please don't change the id -->
@@ -19,15 +25,44 @@
 				</td>
 			</tr>
 			<tr>
-				<td><strong>EXP Title</strong></td>
+				<?php $exp_title = json_decode($olddata['exp_title']);  ?>
+				<td><strong>EXP Title Eng</strong></td>
 				<td>
-				<input type="text" class="exp_title" name="exp_title" value="<?php echo $olddata['exp_title']; ?>" style="width: 500px;">
+					<input type="text" class="exp_title_en" name="exp_title_en" value="<?php echo $exp_title->en; ?>" style="width: 500px;">
+				</td>
+			</tr>
+			<tr>
+				<td><strong>EXP Title French</strong></td>
+				<td>
+					<input type="text" class="exp_title_fr" name="exp_title_fr" value="<?php echo $exp_title->fr; ?>" style="width: 500px;">
+				</td>
+			</tr>
+			<tr>
+				<td><strong>EXP Title Dutch</strong></td>
+				<td>
+					<input type="text" class="exp_title_de" name="exp_title_de" value="<?php echo $exp_title->de; ?>" style="width: 500px;">
 				</td>
 			</tr>
 			<tr>
 				<td><strong>DESCRIPTION</strong></td>
-				<td>
-					<textarea class="exp_desc" name="exp_desc" ><?php echo $olddata['exp_desc']; ?></textarea>					
+				<td>					
+					<?php $exp_desc = json_decode($olddata['exp_desc']);  ?>
+					<div id="tabs" class="col-md-12">
+					      <ul>
+						    <li><a href="#tabs-1">EN</a></li>
+						    <li><a href="#tabs-2">FR</a></li>
+						    <li><a href="#tabs-3">DE</a></li>
+						  </ul>   
+					      <div id="tabs-1" class="form-group">
+					        <textarea class="exp_desc_en" name="exp_desc_en" ><?php echo $exp_desc->en; ?></textarea>					
+					      </div>
+					      <div id="tabs-2" class="form-group">
+					        <textarea class="exp_desc_fr" name="exp_desc_fr" ><?php echo $exp_desc->fr; ?></textarea>					
+					      </div>
+					      <div id="tabs-3" class="form-group">
+					        <textarea class="exp_desc_de" name="exp_desc_de" ><?php echo $exp_desc->de; ?></textarea>					
+					      </div>
+		    		</div>					
 				</td>
 			</tr>
 		</table>
@@ -61,8 +96,20 @@
 		<tr>
 			<td><?php echo date('F, dS Y', strtotime($value['exp_from']));?></td>
 			<td><?php if(strtotime($value['exp_to'])){ echo date('F, dS Y', strtotime($value['exp_to']));} else { echo 'Maintenant'; } ?></td>
-			<td><?php echo $value['exp_title']; ?></td>
-			<td><?php echo $value['exp_desc']; ?></td>			
+			<td>
+				<?php $tit = json_decode($value['exp_title']); 
+					echo "<b>ENG</b><br/> "; print_r($tit->en); echo "<hr><br/>";
+					echo "<b>FR</b><br/>"; print_r($tit->fr); echo "<hr><br/>";
+					echo "<b>DE</b><br/>"; print_r($tit->de); echo "<hr><br/>";
+				?>
+			</td>
+			<td>
+				<?php $desc = json_decode($value['exp_desc']); 
+					echo "<b>ENG</b><br/> "; print_r($desc->en); echo "<hr><br/>";
+					echo "<b>FR</b><br/>"; print_r($desc->fr); echo "<hr><br/>";
+					echo "<b>DE</b><br/>"; print_r($desc->de); echo "<hr><br/>";
+				?>
+			</td>			
 			<td>
 				<span><a href="../wp-admin/themes.php?page=EXP_Page_Settings&edit=<?php echo $value['id'];?>">Edit</a></span><br/>
 				<span><a href="../wp-admin/themes.php?page=EXP_Page_Settings&del=<?php echo $value['id'];?>">Del</a></span>
@@ -75,18 +122,20 @@
 	jQuery( "#from" ).datepicker();
 	jQuery( "#to" ).datepicker();
 
-    CKEDITOR.replace( 'exp_desc' );
-	
+    CKEDITOR.replace( 'exp_desc_en' );
+	CKEDITOR.replace( 'exp_desc_fr' );
+	CKEDITOR.replace( 'exp_desc_de' );
+
 	jQuery(document).on('click','#submit', function(event){
 		event.preventDefault();
 		var from = jQuery( "#from" ).val();
 		var to = jQuery( "#to" ).val();
-		var exptitle = jQuery.trim(jQuery( ".exp_title" ).val());
-		var expdesc = CKEDITOR.instances['exp_desc'].getData();
+		var exptitle = jQuery.trim(jQuery( ".exp_title_en" ).val());
+		var expdesc = CKEDITOR.instances['exp_desc_en'].getData();
 		if(!from || !exptitle || !expdesc){
 			jQuery('.error').removeClass('hidden');
 		}else{
 			jQuery('#realsubmit').click();
 		}
-	});
+	});	
 </script>
