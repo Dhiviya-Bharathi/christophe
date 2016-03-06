@@ -65,6 +65,24 @@
 		    		</div>					
 				</td>
 			</tr>
+			<tr>
+				<td><strong>Experience Group</strong></td>
+				<td>
+					<?php 
+						$parentargs = array('name' => 'ExperienceCategory');
+						$parentcategories = get_categories( $parentargs );
+						$subargs = array('child_of' => $parentcategories['0']->cat_ID,'hide_empty' => '0',);
+						$subcategories = get_categories( $subargs );	
+						?>
+						<select name="exp_cat" id="exp_cat">
+							<option value="">Select...</option>
+						<?php
+						foreach ($subcategories as $key => $value) { ?>							
+								<option <?php if($olddata['exp_cat'] == $value->cat_ID){ echo 'selected="selected"' ;} ?> value="<?php echo $value->cat_ID; ?>"><?php echo $value->name; ?></option>														
+						<?php } ?>
+						</select>
+				</td>
+			</tr>
 		</table>
 		<input type="hidden" name="old" value="<?php echo $olddata['id']; ?>" >
 		<p class="hidden"><input class="button button-primary" id="realsubmit" type="submit">Save Changes</button></p>
@@ -86,7 +104,10 @@
 		</th>
 		<th>
 			Experience Desc
-		</th>		
+		</th>	
+		<th>
+			Experience Group
+		</th>	
 		<th>
 			Action
 		</th>		
@@ -109,7 +130,12 @@
 					echo "<b>FR</b><br/>"; print_r($desc->fr); echo "<hr><br/>";
 					echo "<b>DE</b><br/>"; print_r($desc->de); echo "<hr><br/>";
 				?>
-			</td>			
+			</td>	
+			<td>
+				<?php					
+					echo get_cat_name( $value['exp_cat'] );
+				?>
+			</td>				
 			<td>
 				<span><a href="../wp-admin/themes.php?page=EXP_Page_Settings&edit=<?php echo $value['id'];?>">Edit</a></span><br/>
 				<span><a href="../wp-admin/themes.php?page=EXP_Page_Settings&del=<?php echo $value['id'];?>">Del</a></span>
@@ -132,7 +158,8 @@
 		var to = jQuery( "#to" ).val();
 		var exptitle = jQuery.trim(jQuery( ".exp_title_en" ).val());
 		var expdesc = CKEDITOR.instances['exp_desc_en'].getData();
-		if(!from || !exptitle || !expdesc){
+		var expcat = jQuery( "#exp_cat" ).val();
+		if(!from || !exptitle || !expdesc || !expcat){
 			jQuery('.error').removeClass('hidden');
 		}else{
 			jQuery('#realsubmit').click();

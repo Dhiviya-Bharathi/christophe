@@ -100,9 +100,6 @@ if(!count($finalmonth)){
 	</article>
 </section>
 <script>
-/*$('.open-icon').addClass('hide-icon');
-$('.close-icon').removeClass('hide-icon');
-$('#menu').show();*/
 $('#menu .experience img').attr("src","../wp-content/themes/christophe/images/experience_dark.png");
 $('#menu .experience .menu-item').addClass('active');
 </script>

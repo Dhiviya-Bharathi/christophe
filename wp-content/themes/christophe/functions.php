@@ -98,26 +98,30 @@ function EXP_Page_Settings(){
 
 		$exp_title = array('en' => $_POST['exp_title_en'], 'fr' => $_POST['exp_title_fr'], 'de' => $_POST['exp_title_de']);
 		$exp_desc = array('en' => $_POST['exp_desc_en'], 'fr' => $_POST['exp_desc_fr'], 'de' => $_POST['exp_desc_de']);
+		$exp_cat = $_POST['exp_cat'];
 		$oldid = $_POST['old'];
 
 		$query = "INSERT INTO `wp_experience` (
 								`exp_from` ,
 								`exp_to` ,
 								`exp_title` ,
-								`exp_desc`								
+								`exp_desc`,
+								`exp_cat`																
 								)
 								VALUES ('"
 								.$exp_from. "','"
 								.$exp_to. "','"
 								.json_encode($exp_title). "','"
-								.json_encode($exp_desc). "')";
+								.json_encode($exp_desc). "','"
+								.$exp_cat. "')";
 
 		if($oldid){
 		$query = "UPDATE `wp_experience` SET 
 					 `exp_from` ='". $exp_from."' ,
 					 `exp_to` = '". $exp_to."' ,
 					 `exp_title` = '". json_encode($exp_title)."',
-					 `exp_desc` = '". json_encode($exp_desc)."' 								
+					 `exp_desc` = '". json_encode($exp_desc)."' ,								
+					 `exp_cat` = '". $exp_cat."' 								
 					 WHERE `id` =".$oldid;
 		}
 		
