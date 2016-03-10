@@ -69,10 +69,10 @@
 				<td><strong>Experience Group</strong></td>
 				<td>
 					<?php 
-						$parentargs = array('name' => 'ExperienceCategory');
+						$parentargs = array('name' => 'ExperienceCategory','hide_empty' => '0');
 						$parentcategories = get_categories( $parentargs );
 						$subargs = array('child_of' => $parentcategories['0']->cat_ID,'hide_empty' => '0',);
-						$subcategories = get_categories( $subargs );	
+						$subcategories = get_categories( $subargs );
 						?>
 						<select name="exp_cat" id="exp_cat">
 							<option value="">Select...</option>
