@@ -23,7 +23,7 @@ $(document).ready(function(){
 	var effect = 'slide';
 	var options = { direction: 'right' };
 	var duration = 500;
-	var sectionHeight = $(window).height() - 65;
+	var sectionHeight = $(window).height() - 60;
 	
 	$('.menu').css("position","fixed");
 	$('html, body').css("height","100%");

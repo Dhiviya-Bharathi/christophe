@@ -81,12 +81,12 @@ $(document).on('click','#submit', function(event){
 		}		
 		intRegex = /[0-9 -()+]+$/;
 
-		if(!name || !lastname || !subject || !comment || !email || !phone){
+		if(!name || !lastname || !subject || !comment || !email){
 			jQuery('.msg').removeClass('visibility-hidden');
 			jQuery('.msg').html('Tous les champs sont obligatoires').addClass('error').removeClass('succ');
 		}else if(!IsEmail(email)) {			
 			jQuery('.msg').html('Please provide valid E-mail address').removeClass('visibility-hidden').addClass('error').removeClass('succ');
-		}else if((phone.length < 6) || (!intRegex.test(phone)))	{
+		}else if( phone && ( (phone.length < 6) || (!intRegex.test(phone)) ) ){
 			jQuery('.msg').html('Please enter a valid phone number').removeClass('visibility-hidden').addClass('error').removeClass('succ');
 		}else{
 				var ajaxurl = '<?php echo admin_url('admin-ajax.php');?>';

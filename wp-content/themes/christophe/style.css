@@ -155,7 +155,7 @@ section.vcenter {
 	-webkit-box-pack: center;
 	-webkit-box-align: center;
     display:flex;
-	top: 65px;
+	top: 60px;
     position: relative;
     align-items: center;
 	background-image: url('/wp-content/themes/christophe/images/home_image.png');
@@ -386,6 +386,7 @@ p.line {
 .exp-date-wrap {
     padding-bottom: 60px;
 	font-weight: bold;
+	font-size: 15px;
 }
 .milestone {
 	width: 20px;
@@ -656,4 +657,15 @@ input.form-control:active, input.form-control:focus, textarea.form-control:activ
 .visibility-hidden {
 	visibility:hidden !important;
 }
-
+.no-padd{
+	padding: 0;
+}
+.no-mar{
+	margin: 0;
+}
+.pull-left{
+	float: left;
+}
+.pull-right{
+	float: right;
+}

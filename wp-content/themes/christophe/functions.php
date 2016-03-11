@@ -13,8 +13,9 @@ add_action('admin_menu', 'exp_Menu');
 /*
  *  submenu Fn added under Theme(Apperance main menu)
  */
+   
 function exp_Menu() {
-	add_menu_page('Experience', 'Experience', 'manage_options', 'EXP_Page_Settings', 'EXP_Page_Settings','','62');
+	add_menu_page('Experience', 'Experience', 'manage_options', 'EXP_Page_Settings', 'EXP_Page_Settings','','68');
 }
 
 
@@ -28,7 +29,7 @@ function Home_Page_Settings(){
 	if($_POST['home_title'])
 	update_option('home_title',$_POST['home_title']);
 	if($_POST['home_btn'])
-	update_option('home_btn',$_POST['home_btn']);
+	update_option('home_btn',$_POST['home_btn']);  
 	if($_POST['home_btn_url'])
 	update_option('home_btn_url',$_POST['home_btn_url']);	
 	if($_POST['foot_copy'])
@@ -63,8 +64,14 @@ function Home_Page_Settings(){
 }
 
 function EXP_Page_Settings(){	
-	global $wpdb,$_POST;	
 
+	global $wpdb,$_POST;	
+	?>
+	<script type="text/javascript">
+		jQuery('#menu-appearance').removeClass('wp-has-current-submenu');	
+		jQuery('#toplevel_page_EXP_Page_Settings').addClass('current');
+	</script>
+	<?php 
 	$fullquery = "SELECT * FROM `wp_experience`";
 	$fulldata = $wpdb->get_results($fullquery, ARRAY_A);	
 	
@@ -88,8 +95,9 @@ function EXP_Page_Settings(){
 		}else{
 			$exp_to = '0000-00-00 00:00:00';
 		}
-		$exp_title = $_POST['exp_title'];
-		$exp_desc = $_POST['exp_desc'];
+
+		$exp_title = array('en' => $_POST['exp_title_en'], 'fr' => $_POST['exp_title_fr'], 'de' => $_POST['exp_title_de']);
+		$exp_desc = array('en' => $_POST['exp_desc_en'], 'fr' => $_POST['exp_desc_fr'], 'de' => $_POST['exp_desc_de']);
 		$exp_cat = $_POST['exp_cat'];
 		$oldid = $_POST['old'];
 
@@ -97,28 +105,32 @@ function EXP_Page_Settings(){
 								`exp_from` ,
 								`exp_to` ,
 								`exp_title` ,
-								`exp_cat`,
-								`exp_desc`								
+								`exp_desc`,
+								`exp_cat`																
 								)
-								VALUES (
-								'$exp_from' ,
-								'$exp_to' ,
-								'$exp_title',
-								'$exp_cat',
-								'$exp_desc'								
-								)";
+								VALUES ('"
+								.$exp_from. "','"
+								.$exp_to. "','"
+								.json_encode($exp_title). "','"
+								.json_encode($exp_desc). "','"
+								.$exp_cat. "')";
+
 		if($oldid){
 		$query = "UPDATE `wp_experience` SET 
-					 `exp_from` = '$exp_from' ,
-					 `exp_to` = '$exp_to' ,
-					 `exp_title` = '$exp_title' ,
-					 `exp_cat` = '$exp_cat',
-					 `exp_desc` = '$exp_desc'					
+					 `exp_from` ='". $exp_from."' ,
+					 `exp_to` = '". $exp_to."' ,
+					 `exp_title` = '". json_encode($exp_title)."',
+					 `exp_desc` = '". json_encode($exp_desc)."' ,								
+					 `exp_cat` = '". $exp_cat."' 								
 					 WHERE `id` =".$oldid;
 		}
 		
-		$wpdb->get_results( $query );  
-		
+		$wpdb->get_results( $query ); 
+		?> 
+		<script>			
+			    location.reload();
+		</script>
+	<?php
 		echo "Table updated Successfully";
 	}
 
