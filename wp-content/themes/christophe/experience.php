@@ -65,12 +65,12 @@ if(!count($finalmonth)){
 			<div class="exp-head col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-offset-3 col-sm-6 col-xs-12">
 				<?php echo get_option('header_txt'); ?>
 			</div>
-			<p></p>
+			<div class="row head-bottom-gap col-lg-6 col-md-6 col-sm-6 col-xs-6"></div>
 			<br/>
 		</div>		
 		<?php foreach ($grp as $key => $grpvalue) { ?>
 		<div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12">
-			<div class="exp-head col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-offset-3 col-sm-6 col-xs-12">
+			<div class="exp-head group col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-offset-3 col-sm-6 col-xs-12">
 				<?php $exparr = explode('!@#', $grpvalue);
 					echo $exparr['0'];
 					$fullquery = "SELECT * FROM `wp_experience` WHERE 1 AND `exp_cat` = ".$key." AND `exp_to` != '0000-00-00 00:00:00' ORDER BY `wp_experience`.`exp_to` DESC ";
@@ -80,8 +80,9 @@ if(!count($finalmonth)){
 					$fullclean = array_merge($onedata,$fulldata);
 				?>				
 				<br/>
-				<span><?php echo _e($exparr['1']);?></span>
+				<span class="exp-head-desc"><?php echo _e($exparr['1']);?></span>
 			</div>
+			<div class="row head-bottom-gap col-lg-6 col-md-6 col-sm-6 col-xs-6"></div>
 		</div>
 		<?php foreach ($fullclean as $key => $value) { ?>
 		<div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12">

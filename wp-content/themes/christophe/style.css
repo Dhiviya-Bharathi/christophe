@@ -275,6 +275,7 @@ p.line {
 	text-align: center;
 	display: block;
 	z-index: 99;
+	margin-bottom: 7px;
 }
 .exp-head:after, .exp-head:before {
 	top: 100%;
@@ -298,6 +299,14 @@ p.line {
 	border-top-color: #000000;
 	border-width: 10px;
 	margin-left: -10px;
+}
+.exp-head-desc {
+	font-size: 16px !important;
+}
+.head-bottom-gap {
+    border-right: 2px solid black;
+    height: 65px;
+    margin-left: 1px !important;
 }
 .exp-date {
 	background-color: black;
@@ -327,6 +336,7 @@ p.line {
 	padding: 10px 20px;
 	margin-top: 65px;
 	word-wrap: break-word;
+	margin-bottom: 65px;
 }
 .exp-role h5{
 	word-wrap: break-word;
@@ -382,6 +392,7 @@ p.line {
 .exp-role-wrap {
 	border-left: 2px solid black;
 	padding-bottom: 8px;
+	margin-left: -1px;
 }
 .exp-date-wrap {
     padding-bottom: 60px;
@@ -409,7 +420,7 @@ p.line {
 }
 .exp-tail {
 	height: 65px;
-	margin-left: 2px;
+	margin-left: 1px;
 	border-right: 2px solid black;
 	margin-bottom: 65px;
 }
