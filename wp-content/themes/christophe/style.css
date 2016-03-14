@@ -369,7 +369,7 @@ p.line {
 }
 .exp-role-wrap:after {
 	right: 100%;
-	top: 75px;
+	top: 10px;
 	border: solid transparent;
 	content: " ";
 	pointer-events: none;
